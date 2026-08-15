@@ -1,0 +1,8 @@
+node_modules/
+__pycache__/
+*.pyc
+# Generated outputs are committed on purpose - they are the deliverable.
+# Only the noisy intermediates are ignored.
+build/source/
+build/points/demo.*
+build/outlines/_*

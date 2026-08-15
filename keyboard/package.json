@@ -1,0 +1,12 @@
+{
+  "name": "pinkyless46",
+  "version": "0.3.0",
+  "private": true,
+  "description": "46-key column-staggered split keyboard - Choc v1, hotswap, RP2040/QMK",
+  "scripts": {
+    "build": "ergogen src/config.yaml -o build --svg --debug --clean"
+  },
+  "devDependencies": {
+    "ergogen": "^4.2.1"
+  }
+}

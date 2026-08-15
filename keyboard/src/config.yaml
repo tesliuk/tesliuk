@@ -1,0 +1,458 @@
+meta:
+  engine: 4.1.0
+  name: pinkyless46
+  version: 0.2.0
+  author: tesliuk
+
+# ---------------------------------------------------------------------------
+# pinkyless46 - a 46-key (23 per half) column-staggered split keyboard
+#
+#   * Kailh Choc v1 low-profile switches, 18.0 x 17.0 mm spacing
+#   * 4 rows x 5 columns, with the pinky column cut down to 2 keys
+#   * 5 thumb keys per half: a 3-key arc plus a 2-key island tucked below it
+#   * Wired, QMK, RP2040 "Pro Micro" form-factor controller, TRRS between halves
+#   * Reversible: ONE pcb design, flipped over to make the right half
+#
+# Electrical matrix is 5 columns x 5 rows = 25 cells for 23 keys. The fifth
+# row exists purely to give the five thumb keys somewhere to live; the finger
+# matrix only uses rows R1-R4.
+#
+# Change a unit, rebuild, and the PCB *and* the 3D-printed case both follow -
+# the case generator reads the key positions this file produces.
+# ---------------------------------------------------------------------------
+
+units:
+  # Kailh Choc v1 switch pitch. This is the low-profile standard and is
+  # deliberately tighter than MX (19.05). For MX, set both to 19.05.
+  kx: 18
+  ky: 17
+
+  # How much board to leave around a key when building the outline.
+  bleed: 6
+
+  # --- Column stagger -----------------------------------------------------
+  # These are ABSOLUTE offsets from the pinky column, in mm.
+  # Positive = that column sits further AWAY from you (forward).
+  # They follow relative finger length: middle longest, pinky shortest. The
+  # inner column is pulled BACK because the index reaches inward and down,
+  # not inward and forward.
+  #
+  # NOTE: ergogen's `stagger` is CUMULATIVE - each column's stagger is added
+  # to the running total, not measured from the origin. So below, every
+  # column asks for `st_x - st_previous`. Edit these absolute values and the
+  # deltas take care of themselves.
+  st_pinky: 0
+  st_ring: 6
+  st_middle: 9
+  st_index: 4
+  st_inner: -2
+
+  # --- Thumb cluster ------------------------------------------------------
+  # Placed as explicit offsets from the bottom key of the index column, so
+  # the geometry is directly readable instead of emerging from chained
+  # rotations. t1-t3 are the comfortable arc; t4-t5 are the deliberate
+  # stretch island tucked below and inboard.
+  th_ref_x: 114     # matrix_index_bottom lands here; kept for reference only
+  th_ref_y: -156
+
+points:
+  key:
+    padding: ky      # row-to-row distance
+    spread: kx       # column-to-column distance
+
+  zones:
+    # -------------------------------------------------------------------
+    # Main finger matrix.
+    #
+    # Rows are listed BOTTOM to TOP (an ergogen convention), so the order
+    # below reads: bottom row, home row, top row, number row.
+    #
+    # The pinky column skips 'bottom' and 'num', leaving it the two easiest
+    # keys - home and top. That is the "I don't like using pinkies"
+    # requirement. To give the pinky a third key, delete its
+    # `bottom.skip: true` line; the matrix has spare cells for it.
+    # -------------------------------------------------------------------
+    matrix:
+      anchor:
+        shift: [60, -160]
+      columns:
+        pinky:
+          key:
+            stagger: st_pinky
+            column_net: C1
+          rows:
+            bottom.skip: true
+            num.skip: true
+        ring:
+          key:
+            stagger: st_ring - st_pinky
+            column_net: C2
+        middle:
+          key:
+            stagger: st_middle - st_ring
+            column_net: C3
+        index:
+          key:
+            stagger: st_index - st_middle
+            column_net: C4
+        inner:
+          key:
+            stagger: st_inner - st_index
+            column_net: C5
+      rows:
+        bottom:
+          row_net: R1
+        home:
+          row_net: R2
+        top:
+          row_net: R3
+        num:
+          row_net: R4
+
+    # -------------------------------------------------------------------
+    # Thumb cluster - 5 keys, wired as row R5 across all five columns.
+    #
+    #   t1 t2 t3   <- comfortable arc, thumb sweeps outward
+    #     t4 t5    <- stretch island, thumb curls down and inboard
+    #
+    # spread/padding are zeroed so every key is positioned by an explicit
+    # shift from the zone anchor rather than by grid advance. Rotations
+    # follow the thumb's natural arc.
+    # -------------------------------------------------------------------
+    thumb:
+      anchor:
+        ref: matrix_index_bottom
+      columns:
+        t1:
+          key:
+            spread: 0
+            shift: [-10, -24]
+            rotate: -8
+            column_net: C1
+        t2:
+          key:
+            spread: 0
+            shift: [9, -30]
+            rotate: -18
+            column_net: C2
+        t3:
+          key:
+            spread: 0
+            shift: [27, -38]
+            rotate: -28
+            column_net: C3
+        t4:
+          key:
+            spread: 0
+            shift: [-4, -51]
+            rotate: -14
+            column_net: C4
+        t5:
+          key:
+            spread: 0
+            shift: [15, -58]
+            rotate: -24
+            column_net: C5
+      rows:
+        thumb:
+          row_net: R5
+
+    # -------------------------------------------------------------------
+    # Controller, TRRS jack and reset button.
+    #
+    # These are declared as single-key ZONES rather than placed with an
+    # `adjust` shift on an existing key. That is deliberate: ergogen mirrors
+    # whole POINTS, but it does not mirror an `adjust` shift, so anything
+    # positioned by adjust lands on the same side of both halves - i.e.
+    # inboard on the left and outboard on the right. Giving them their own
+    # points means the global mirror moves them correctly.
+    #
+    # They are excluded from the switch/diode footprints by name: every
+    # filter below selects on `matrix_` / `thumb_` prefixes.
+    # -------------------------------------------------------------------
+    mcu:
+      anchor:
+        ref: matrix_inner_num
+        shift: [11, 25]
+        rotate: 90
+      columns:
+        mcu:
+      rows:
+        mcu:
+
+    trrs:
+      anchor:
+        ref: matrix_inner_num
+        shift: [-13, 31]
+      columns:
+        trrs:
+      rows:
+        trrs:
+
+    reset:
+      anchor:
+        ref: matrix_inner_num
+        shift: [-32, 27]
+      columns:
+        reset:
+      rows:
+        reset:
+
+    # -------------------------------------------------------------------
+    # M2 mounting holes.
+    #
+    # These positions are NOT hand-picked. The layout is dense - switch
+    # bodies in adjacent columns nearly touch and every key has a diode
+    # 5.5 mm below it - so `src/find_mounts.py` searches the board for
+    # points that are >= 4 mm clear of every pad on either face and >= 4 mm
+    # inside the edge, then spreads the chosen ones out. Re-run it after
+    # any layout change and paste the result back here.
+    #
+    # Declaring them as points (rather than as bare circles) means the PCB
+    # holes and the case standoffs read the same numbers.
+    # -------------------------------------------------------------------
+    mounts:
+      anchor:
+        ref: matrix_pinky_home
+      columns:
+        m1:
+          key: {spread: 0, shift: [49.5, 72.3]}
+        m2:
+          key: {spread: 0, shift: [69.5, 44.3]}
+        m3:
+          key: {spread: 0, shift: [32.5, -22.7]}
+        m4:
+          key: {spread: 0, shift: [82.5, -23.7]}
+        m5:
+          key: {spread: 0, shift: [35.5, -59.7]}
+        m6:
+          key: {spread: 0, shift: [80.5, -64.7]}
+      rows:
+        m:
+
+  # Mirror to produce the right half. The axis sits at
+  # (ref.x + distance/2), so this leaves a wide, unambiguous gap between
+  # the two outlines.
+  #
+  # NOTE: the mirrored half exists for the preview and for the case
+  # generator. The FABRICATED pcb is the left half only - see `board_left`
+  # below and docs/ORDERING.md for why.
+  mirror:
+    ref: matrix_pinky_home
+    distance: 280
+
+outlines:
+  # ---------------------------------------------------------------------
+  # Naming convention in this section:
+  #   *_all   - both halves, used only for the preview picture
+  #   *_left  - the left half alone, which is what actually gets fabricated
+  #
+  # Only ONE pcb design is manufactured. The right half is the same board
+  # flipped over, which works because every footprint is `reverse: true`
+  # and therefore has pads on both faces. See docs/ORDERING.md.
+  # ---------------------------------------------------------------------
+
+  # Choc plate cutout is 13.8 mm square.
+  _plate_holes:
+    - what: rectangle
+      where: /^(matrix|thumb)_/
+      size: [13.8, 13.8]
+
+  # Keycap envelopes, for visually checking nothing collides.
+  _keycaps:
+    - what: rectangle
+      where: /^(mirror_)?(matrix|thumb)_/
+      size: [17.5, 16.5]
+
+  # --- Left half only: this is the fabricated outline -------------------
+  _blob_left:
+    - what: rectangle
+      where: /^(matrix|thumb)_/
+      size: [kx + bleed, ky + bleed]
+    # Bridges. The thumb keys sit further from their neighbours than the
+    # `bleed`-grown key pads can span, so the union would silently produce a
+    # board in several disconnected pieces. Ergogen does not warn about
+    # this; a board house would either reject the file or ship fragments.
+    # check_outline.py enforces that these bridges do their job.
+    - what: rectangle
+      where: /^thumb_t[12]_thumb$/
+      adjust:
+        shift: [0, 12]
+      size: [kx + bleed + 10, 34]
+    - what: rectangle
+      where: /^thumb_t4_thumb$/
+      adjust:
+        shift: [4, 14]
+      size: [48, 36]
+    # Controller / jack / reset pad. These points carry rotation of their
+    # own, so each rectangle is drawn in that point's frame.
+    - what: rectangle
+      where: /^mcu_/
+      size: [40, 24]
+    - what: rectangle
+      where: /^trrs_/
+      adjust:
+        shift: [0, -4]
+      size: [30, 36]
+    - what: rectangle
+      where: /^reset_/
+      size: [16, 16]
+
+  # M2 clearance holes, subtracted from the board.
+  _screws:
+    - what: circle
+      where: /^mounts_/
+      radius: 1.1
+
+  board_left:
+    - what: outline
+      name: _blob_left
+      fillet: 2.5
+    - operation: subtract
+      what: outline
+      name: _screws
+
+  plate_left:
+    - what: outline
+      name: board_left
+    - operation: subtract
+      what: outline
+      name: _plate_holes
+
+  # --- Both halves: preview only ----------------------------------------
+  _blob_all:
+    - what: rectangle
+      where: /^(mirror_)?(matrix|thumb)_/
+      size: [kx + bleed, ky + bleed]
+    - what: rectangle
+      where: /^(mirror_)?thumb_t[12]_thumb$/
+      adjust:
+        shift: [0, 12]
+      size: [kx + bleed + 10, 34]
+    - what: rectangle
+      where: /^(mirror_)?thumb_t4_thumb$/
+      adjust:
+        shift: [4, 14]
+      size: [48, 36]
+    - what: rectangle
+      where: /^(mirror_)?mcu_/
+      size: [40, 24]
+    - what: rectangle
+      where: /^(mirror_)?trrs_/
+      adjust:
+        shift: [0, -4]
+      size: [30, 36]
+    - what: rectangle
+      where: /^(mirror_)?reset_/
+      size: [16, 16]
+
+  _screws_all:
+    - what: circle
+      where: /^(mirror_)?mounts_/
+      radius: 1.1
+
+  board:
+    - what: outline
+      name: _blob_all
+      fillet: 2.5
+    - operation: subtract
+      what: outline
+      name: _screws_all
+
+  preview:
+    - what: outline
+      name: board
+    - what: outline
+      name: _keycaps
+      operation: stack
+
+pcbs:
+  pinkyless46:
+    outlines:
+      main:
+        outline: board_left
+    footprints:
+      # -------------------------------------------------------------
+      # Switches. hotswap + reverse puts Kailh CPG135001S30 socket pads on
+      # BOTH sides of the board, which is what lets a single design serve
+      # as the left half and, flipped over, the right half.
+      # -------------------------------------------------------------
+      switches:
+        what: choc
+        where: /^(matrix|thumb)_/
+        params:
+          keycaps: true
+          reverse: true
+          hotswap: true
+          from: "{{colrow}}"
+          to: "{{column_net}}"
+
+      # -------------------------------------------------------------
+      # Matrix diodes, COL2ROW. The "ComboDiode" footprint carries both
+      # SMD (SOD-123) and through-hole pads; JLCPCB populates the SMD
+      # pads, so you never touch these.
+      # -------------------------------------------------------------
+      diodes:
+        what: diode
+        where: /^(matrix|thumb)_/
+        params:
+          from: "{{colrow}}"
+          to: "{{row_net}}"
+        adjust:
+          shift: [0, -5.5]
+
+      # -------------------------------------------------------------
+      # Controller: RP2040 in Pro Micro form factor (Sea-Picro, Elite-Pi,
+      # 0xCB Helios ...). Socketed on header strips - the only part you
+      # solder. Net names are Pro Micro *silk labels*; see
+      # docs/PIN_MAPPING.md for the RP2040 GPIO each becomes.
+      # -------------------------------------------------------------
+      mcu:
+        what: promicro
+        where: /^mcu_/
+        params:
+          orientation: up
+          # Rows and columns are deliberately kept on Pro Micro pins whose
+          # RP2040 mapping is unambiguous: silk 2-9 map to GP2-GP9 and
+          # A0/A1 map to GP26/GP27 on every Pro Micro-footprint RP2040 board
+          # (Sea-Picro, Elite-Pi, Helios). Avoiding pins 10/14/15/16 sidesteps
+          # the one region where those boards disagree with each other.
+          P2: R1
+          P3: R2
+          P4: R3
+          P5: R4
+          P6: R5
+          P7: C1
+          P8: C2
+          P9: C3
+          P18: C4
+          P19: C5
+          P1: DATA
+          RAW: VCC
+          VCC: VCC
+          GND: GND
+          RST: RST
+
+      # -------------------------------------------------------------
+      # TRRS jack (PJ-320A) linking the two halves.
+      # reverse + symmetric keeps the pinout correct after the board flip,
+      # which requires pins 1 and 2 to share a net - both are GND here.
+      # -------------------------------------------------------------
+      trrs:
+        what: trrs
+        where: /^trrs_/
+        params:
+          reverse: true
+          symmetric: true
+          A: GND
+          B: GND
+          C: VCC
+          D: DATA
+
+      # Reset button, SMD, populated by JLCPCB.
+      reset:
+        what: button
+        where: /^reset_/
+        params:
+          from: RST
+          to: GND
