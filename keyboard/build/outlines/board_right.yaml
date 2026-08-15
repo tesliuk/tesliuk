@@ -1,0 +1,358 @@
+models:
+    export:
+        models:
+            a:
+                models: {}
+                origin:
+                    - 0
+                    - 0
+            b:
+                models:
+                    '0':
+                        paths:
+                            ShapeLine1_Bottom_Top:
+                                type: line
+                                origin:
+                                    - 350.7205628
+                                    - -160
+                                end:
+                                    - 352.25
+                                    - -160
+                            ShapeLine2_Bottom_Top:
+                                type: line
+                                origin:
+                                    - 352.25
+                                    - -160
+                                end:
+                                    - 352.25
+                                    - -102.5
+                            ShapeLine3_Bottom_Top:
+                                type: line
+                                origin:
+                                    - 349.75
+                                    - -100
+                                end:
+                                    - 347.1664079
+                                    - -100
+                            ShapeLine3_Bottom_EndCap:
+                                type: arc
+                                origin:
+                                    - 347.1664079
+                                    - -82
+                                radius: 18
+                                startAngle: 225.0170422634985
+                                endAngle: 270
+                            ShapeLine3_Bottom_1_Top:
+                                type: line
+                                origin:
+                                    - 332.67503120000003
+                                    - -94
+                                end:
+                                    - 326.5637085
+                                    - -94
+                            ShapeLine3_Bottom_1_EndCap:
+                                type: arc
+                                origin:
+                                    - 326.5637085
+                                    - -76
+                                radius: 18
+                                startAngle: 233.59847938229237
+                                endAngle: 270
+                            ShapeLine3_Bottom_2_Top:
+                                type: line
+                                origin:
+                                    - 314.3981834
+                                    - -90
+                                end:
+                                    - 291.6018166
+                                    - -90
+                            ShapeLine3_EndCap_EndCap:
+                                type: arc
+                                origin:
+                                    - 279.4362915
+                                    - -76
+                                radius: 18
+                                startAngle: 270
+                                endAngle: 306.40152061770766
+                            ShapeLine3_Top_Bottom:
+                                type: line
+                                origin:
+                                    - 253.0355496
+                                    - -94
+                                end:
+                                    - 279.4362915
+                                    - -94
+                            ShapeLine3_StartCap_EndCap:
+                                type: arc
+                                origin:
+                                    - 244.2037887
+                                    - -78
+                                radius: 18
+                                startAngle: 270
+                                endAngle: 295.51945857578613
+                            ShapeLine1_Bottom_1_Top:
+                                type: line
+                                origin:
+                                    - 244.2037887
+                                    - -96
+                                end:
+                                    - 220.2
+                                    - -96
+                            ShapeLine2_Bottom_1_Top:
+                                type: line
+                                origin:
+                                    - 217.7
+                                    - -98.5
+                                end:
+                                    - 217.7
+                                    - -159.1308242
+                            ShapeLine2_EndCap_3_EndCap:
+                                type: arc
+                                origin:
+                                    - 203.8469121
+                                    - -171.4931264
+                                radius: 18
+                                startAngle: 298.0000012957045
+                                endAngle: 37.08787093733034
+                            ShapeLine3_Bottom_3_Top:
+                                type: line
+                                origin:
+                                    - 212.2974006
+                                    - -187.3861829
+                                end:
+                                    - 210.8519081065533
+                                    - -188.15476478524454
+                            ShapeLine3_EndCap_1_StartCap:
+                                type: arc
+                                origin:
+                                    - 202.3997451065533
+                                    - -172.26259878524453
+                                radius: 18
+                                startAngle: 297.99999994195815
+                                endAngle: 298.00603823424143
+                            ShapeLine4_Bottom_Top:
+                                type: line
+                                origin:
+                                    - 210.8502332
+                                    - -188.1556555
+                                end:
+                                    - 221.8441798366976
+                                    - -208.83226198048752
+                            ShapeLine1_StartCap_EndCap:
+                                type: arc
+                                origin:
+                                    - 211.82396819999997
+                                    - -224.1126485
+                                radius: 18
+                                startAngle: 384.00000012027505
+                                endAngle: 53.382693209793125
+                            ShapeLine4_Bottom_1_Top:
+                                type: line
+                                origin:
+                                    - 228.26778639999998
+                                    - -216.79138890000002
+                                end:
+                                    - 233.58913609999996
+                                    - -228.7433361
+                            ShapeLine1_Bottom_2_Top:
+                                type: line
+                                origin:
+                                    - 233.5899079
+                                    - -228.7450694
+                                end:
+                                    - 253.16730069999997
+                                    - -220.02865250000002
+                            ShapeLine1_Bottom_2_EndCap:
+                                type: arc
+                                origin:
+                                    - 260.48856029999996
+                                    - -236.4724707
+                                radius: 18
+                                startAngle: 104.00000002709156
+                                endAngle: 114.00000006541008
+                            ShapeLine1_Bottom_3_Top:
+                                type: line
+                                origin:
+                                    - 256.13396614325353
+                                    - -219.00714762294177
+                                end:
+                                    - 271.0634461298684
+                                    - -215.28481023055733
+                            ShapeLine2_Bottom_2_Top:
+                                type: line
+                                origin:
+                                    - 272.8843806563947
+                                    - -212.2542661864096
+                                end:
+                                    - 271.81144969999997
+                                    - -207.95097520000002
+                            ShapeLine2_Bottom_2_EndCap:
+                                type: arc
+                                origin:
+                                    - 289.27677279999995
+                                    - -203.5963811
+                                radius: 18
+                                startAngle: 130.03558874087796
+                                endAngle: 193.99999983674925
+                            ShapeLine1_EndCap_3_EndCap:
+                                type: arc
+                                origin:
+                                    - 296.48209813483055
+                                    - -190.0000000009472
+                                radius: 18
+                                startAngle: 450.0000003183099
+                                endAngle: 174.12221076493694
+                            ShapeLine1_Bottom_4_Top:
+                                type: line
+                                origin:
+                                    - 296.4820980348305
+                                    - -172.0000000009472
+                                end:
+                                    - 296.74999993483056
+                                    - -172.0000000009472
+                            ShapeLine1_EndCap_4_EndCap:
+                                type: arc
+                                origin:
+                                    - 303
+                                    - -188.8800918
+                                radius: 18
+                                startAngle: 70.97392807206914
+                                endAngle: 470.3175076617947
+                            ShapeLine1_Bottom_5_Top:
+                                type: line
+                                origin:
+                                    - 309.6829666
+                                    - -172
+                                end:
+                                    - 332.0658047
+                                    - -172
+                            ShapeLine1_Bottom_StartCap:
+                                type: arc
+                                origin:
+                                    - 350.7205628
+                                    - -178
+                                radius: 18
+                                startAngle: 90
+                                endAngle: 155.5037209416627
+                        origin:
+                            - 0
+                            - 0
+                origin:
+                    - 0
+                    - 0
+            fillet_0_0:
+                paths:
+                    fillet0:
+                        origin:
+                            - 349.75
+                            - -102.5
+                        radius: 2.5
+                        startAngle: 0
+                        endAngle: 90
+                        type: arc
+                    fillet1:
+                        origin:
+                            - 332.67503120000003
+                            - -96.5
+                        radius: 2.5
+                        startAngle: 45.0170422634985
+                        endAngle: 90
+                        type: arc
+                    fillet2:
+                        origin:
+                            - 314.3981834
+                            - -92.5
+                        radius: 2.5
+                        startAngle: 53.59847938229234
+                        endAngle: 90
+                        type: arc
+                    fillet3:
+                        origin:
+                            - 291.6018166
+                            - -92.5
+                        radius: 2.5
+                        startAngle: 90
+                        endAngle: 126.40152061770766
+                        type: arc
+                    fillet4:
+                        origin:
+                            - 253.0355496
+                            - -96.5
+                        radius: 2.5
+                        startAngle: 90
+                        endAngle: 115.51945857578613
+                        type: arc
+                    fillet5:
+                        origin:
+                            - 220.2
+                            - -98.5
+                        radius: 2.5
+                        startAngle: 90
+                        endAngle: 180
+                        type: arc
+                    fillet6:
+                        origin:
+                            - 220.2
+                            - -159.1308242
+                        radius: 2.5
+                        startAngle: 180
+                        endAngle: 217.08787093733034
+                        type: arc
+                    fillet7:
+                        origin:
+                            - 224.05154879999998
+                            - -207.65858300000002
+                        radius: 2.5
+                        startAngle: 208.00000169054445
+                        endAngle: 233.38269320979313
+                        type: arc
+                    fillet8:
+                        origin:
+                            - 256.73877089999996
+                            - -221.4328869
+                        radius: 2.5
+                        startAngle: 104.00000002709156
+                        endAngle: 104.00000060884703
+                        type: arc
+                    fillet9:
+                        origin:
+                            - 270.45864137105787
+                            - -212.85907094522037
+                        radius: 2.5
+                        startAngle: 284.00000060884656
+                        endAngle: 14.00000060885238
+                        type: arc
+                    fillet10:
+                        origin:
+                            - 276.08987499999995
+                            - -187.9006579
+                        radius: 2.5
+                        startAngle: 310.035588740878
+                        endAngle: 354.12221076493694
+                        type: arc
+                    fillet11:
+                        origin:
+                            - 309.6829666
+                            - -169.5
+                        radius: 2.5
+                        startAngle: 250.97392807206916
+                        endAngle: 270
+                        type: arc
+                    fillet12:
+                        origin:
+                            - 332.0658047
+                            - -169.5
+                        radius: 2.5
+                        startAngle: 270
+                        endAngle: 335.50372094166266
+                        type: arc
+                origin:
+                    - 0
+                    - 0
+        origin:
+            - 0
+            - 0
+units: mm
+origin:
+    - 0
+    - 0

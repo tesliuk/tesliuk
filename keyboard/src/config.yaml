@@ -25,10 +25,20 @@ meta:
 # ---------------------------------------------------------------------------
 
 units:
-  # Kailh Choc v1 switch pitch. This is the low-profile standard and is
-  # deliberately tighter than MX (19.05). For MX, set both to 19.05.
-  kx: 18
-  ky: 17
+  # Kailh Choc v1 switch pitch.
+  #
+  # The Choc standard is 18.0 x 17.0, which leaves only 0.5 mm between
+  # adjacent MBK keycaps in both directions and 2.0 mm between switch base
+  # flanges on the row axis. That is what every stock Choc board uses and it
+  # does work - but it is genuinely tight for getting a puller in, and it
+  # leaves no margin at all for keycaps that are a touch larger than MBK.
+  #
+  # These are opened slightly: 1.0 mm between caps across columns, 1.5 mm
+  # down rows, and 3.0 mm between switch flanges. Costs ~2 mm of board width
+  # and ~3 mm of height. Set back to 18/17 for stock Choc spacing, or 19.05
+  # for both if you switch to MX.
+  kx: 18.5
+  ky: 18
 
   # Column pitch for the INNER column only.
   #
@@ -49,7 +59,11 @@ units:
   # Radius for the morphological closing that fills concave pockets in the
   # outline. Fills notches narrower than roughly 2*close; raise it to smooth
   # the board further, lower it to keep more of the key-shaped silhouette.
-  close: 6
+  #
+  # 18 is enough to close the wide bay between the controller area and the
+  # thumb cluster, giving a straight inboard edge. That bay is dead space, so
+  # filling it costs ~6 cm2 of board and nothing in bounding box.
+  close: 18
 
   # --- Column stagger -----------------------------------------------------
   # ABSOLUTE offsets in mm, measured from the ring/index/inner baseline.
@@ -164,34 +178,40 @@ points:
       anchor:
         ref: matrix_inner_bottom
       columns:
+        # Spacing here is set so that NO pair in the thumb cluster is tighter
+        # than the regular grid is with itself (1.00 mm between MBK caps,
+        # 0.50 mm between wider 18x17 caps). Rotated keys lose clearance at
+        # their corners, so the arc needs slightly more than the grid pitch
+        # to end up equally roomy, and t1 sits a little lower than a plain
+        # row step would put it to clear the inner column's bottom key.
         t1:
           key:
             spread: 0
-            shift: [0, -18]
+            shift: [0, -19]
             rotate: -8
             column_net: C1
         t2:
           key:
             spread: 0
-            shift: [19, -24]
+            shift: [19.1, -24.9]
             rotate: -18
             column_net: C2
         t3:
           key:
             spread: 0
-            shift: [37, -32]
+            shift: [37.4, -33.0]
             rotate: -28
             column_net: C3
         t4:
           key:
             spread: 0
-            shift: [6, -45]
+            shift: [6, -46.0]
             rotate: -14
             column_net: C4
         t5:
           key:
             spread: 0
-            shift: [25, -52]
+            shift: [24.8, -52.8]
             rotate: -24
             column_net: C5
       rows:
@@ -291,17 +311,17 @@ points:
         ref: matrix_pinky_home
       columns:
         m1:
-          key: {spread: 0, shift: [116.0, 46.3]}
+          key: {spread: 0, shift: [117.4, 47.7]}
         m2:
-          key: {spread: 0, shift: [64.0, 19.3]}
+          key: {spread: 0, shift: [3.4, 46.7]}
         m3:
-          key: {spread: 0, shift: [89.0, 1.3]}
+          key: {spread: 0, shift: [65.4, 33.7]}
         m4:
-          key: {spread: 0, shift: [116.0, -8.7]}
+          key: {spread: 0, shift: [117.4, -11.3]}
         m5:
-          key: {spread: 0, shift: [64.0, -19.7]}
+          key: {spread: 0, shift: [41.4, -19.3]}
         m6:
-          key: {spread: 0, shift: [91.0, -54.7]}
+          key: {spread: 0, shift: [92.4, -56.3]}
       rows:
         m:
 
@@ -419,22 +439,44 @@ outlines:
       where: /^(mirror_)?mounts_/
       radius: 1.1
 
-  _blob_all_grown:
+  # The preview closes each half SEPARATELY and only then unions them.
+  # Closing the two together would bridge the ~31 mm gap between the halves -
+  # a radius of 18 grows each side by 18 - and fuse them into one shape. That
+  # never affected the fabricated board (board_left is the left half alone),
+  # but it made the preview picture a lie.
+  _blob_right:
+    - what: rectangle
+      where: /^mirror_(matrix|thumb)_/
+      size: [kx + bleed, ky + bleed]
+    - what: rectangle
+      where: /^mirror_web_/
+      size: [26, 16]
+    - what: rectangle
+      where: /^mirror_mcu_/
+      size: [38, 64]
+
+  _blob_right_grown:
     - what: outline
-      name: _blob_all
+      name: _blob_right
       expand: close
       joints: round
 
-  _blob_all_closed:
+  _blob_right_closed:
     - what: outline
-      name: _blob_all_grown
+      name: _blob_right_grown
       expand: 0 - close
       joints: round
 
+  board_right:
+    - what: outline
+      name: _blob_right_closed
+      fillet: 2.5
+
   board:
     - what: outline
-      name: _blob_all_closed
-      fillet: 2.5
+      name: board_left
+    - what: outline
+      name: board_right
     - operation: subtract
       what: outline
       name: _screws_all

@@ -9,11 +9,11 @@ $default_height: 18
 $default_width: 18
 $default_padding: 19
 $default_autobind: 10
-kx: 18
-ky: 17
+kx: 18.5
+ky: 18
 kx_inner: 19.8
 bleed: 6
-close: 6
+close: 18
 st_pinky: -6
 st_ring: 0
 st_middle: 4

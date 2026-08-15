@@ -45,7 +45,13 @@ at the *same* height short against each other at an 18 mm pitch. Index and
 inner are level, so that single gap is opened to **19.8 mm**. Every other gap
 stays at 18 mm, clearing on vertical offset alone.
 
-Board: **138 × 133 mm** per half. Case: **8.9 mm** tall before switches.
+Key pitch is **18.5 × 18 mm**, slightly looser than the 18 × 17 Choc standard.
+Stock spacing leaves only 0.5 mm between MBK keycaps and 2.0 mm between switch
+flanges, which works but is tight for getting a puller in and leaves nothing
+for caps larger than MBK. This gives 1.0 mm between caps, 1.5 mm down rows and
+3.0 mm between flanges, for ~2 mm of width and ~3 mm of height.
+
+Board: **141 × 138 mm** per half. Case: **8.9 mm** tall before switches.
 The width comes from the thumb cluster reaching ~37 mm inboard of the matrix.
 
 The controller, TRRS jack and reset button live in the **notch** between the
@@ -56,12 +62,13 @@ putting it above the matrix instead added 30 mm of board height for a part
 that is 33 × 18 mm. The USB port faces inboard, so the cable exits between
 the halves.
 
-The outline is **morphologically closed** (grown 6 mm, shrunk 6 mm) before
+The outline is **morphologically closed** (grown 18 mm, shrunk 18 mm) before
 filleting. That fills the concave pockets between the thumb cluster, the
 controller area and the key pads — dead space whose sharp inside corners are
 crack initiation points in both FR4 and the printed plate. It costs 1.3% more
 board area and nothing in bounding box, and takes the narrowest neck from
-22.2 mm to 33.0 mm. A plain convex hull would have swallowed the whole empty
+22.2 mm to 55.4 mm. Each half is closed separately — closing them together
+would bridge the gap between the halves and fuse them. A plain convex hull would have swallowed the whole empty
 region left of the thumb cluster and added ~40 cm² of pointless board.
 
 ## What is in here
@@ -93,7 +100,7 @@ make           # build, check, case, firmware
 
 | Check | Catches |
 |-------|---------|
-| `layout` | keycaps or switch bodies colliding; thumb keys out of reach |
+| `layout` | **minimum** keycap and switch-flange gaps (not just overlap), for two cap sizes; thumb keys out of reach |
 | `outline` | disconnected pieces; stray voids; missing screw holes; **thin necks and concave notches** |
 | `matrix` | miswired switch/diode; **two keys sharing a matrix cell** |
 | `fit` | components or screws hanging off the board edge |

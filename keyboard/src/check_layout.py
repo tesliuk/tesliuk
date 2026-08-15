@@ -28,9 +28,18 @@ BUILD = Path(__file__).resolve().parent.parent / "build"
 POINTS = BUILD / "points" / "points.yaml"
 
 # Kailh Choc v1 dimensions, millimetres.
-CAP_W, CAP_H = 17.5, 16.5      # low-profile keycap envelope
-BODY_W, BODY_H = 15.0, 15.0    # switch body incl. latches
+CAP_W, CAP_H = 17.5, 16.5      # MBK-style low-profile keycap
+WIDE_W, WIDE_H = 18.0, 17.0    # a larger Choc cap, checked as the worst case
+BODY_W, BODY_H = 15.0, 15.0    # switch base flange, below the plate
 MIN_HALF_GAP = 8.0             # minimum clear space between the two halves
+
+# Minimum gaps. It is not enough that keycaps merely fail to overlap: you have
+# to get a puller under the cap edge, and a rotated key loses clearance at its
+# corners, so a thumb cluster can end up far tighter than the grid it sits
+# next to while still "not overlapping".
+MIN_CAP_GAP = 0.9              # between MBK caps
+MIN_WIDE_GAP = 0.45            # between larger caps - the worst case
+MIN_BODY_GAP = 1.5             # between switch flanges, for swapping
 
 
 def rect(x, y, r, w, h):
@@ -58,23 +67,36 @@ def load_points():
     return pts
 
 
-def check_overlaps(pts, w, h, label, tol=0.05):
-    """Report every pair of keys whose w*h envelopes intersect."""
+def check_clearance(pts, w, h, label, min_gap):
+    """
+    Every pair of w*h envelopes must clear each other by at least min_gap.
+
+    Reports the tightest pair either way, because that number is what decides
+    whether the board is pleasant to rebuild.
+    """
     polys = {n: rect(x, y, r, w, h) for n, (x, y, r) in pts.items()}
     names = sorted(polys)
-    bad = []
+    worst = []
     for i, a in enumerate(names):
         for b in names[i + 1:]:
-            inter = polys[a].intersection(polys[b])
-            if inter.area > tol:
-                bad.append((a, b, inter.area))
+            pa, pb = polys[a], polys[b]
+            if pa.intersects(pb) and pa.intersection(pb).area > 0.01:
+                worst.append((-pa.intersection(pb).area, a, b, True))
+            else:
+                worst.append((pa.distance(pb), a, b, False))
+    worst.sort(key=lambda t: t[0])
+
+    bad = [t for t in worst if t[0] < min_gap]
+    tightest = worst[0]
     if bad:
-        print(f"  FAIL  {label}: {len(bad)} overlapping pair(s)")
-        for a, b, area in sorted(bad, key=lambda t: -t[2])[:12]:
-            print(f"          {a} <-> {b}   overlap {area:.2f} mm^2")
-    else:
-        print(f"  ok    {label}: no collisions")
-    return not bad
+        print(f"  FAIL  {label}: {len(bad)} pair(s) closer than {min_gap} mm")
+        for d, a, b, overlap in bad[:6]:
+            how = f"OVERLAP {-d:.2f} mm^2" if overlap else f"gap {d:.2f} mm"
+            print(f"          {a} <-> {b}   {how}")
+        return False
+    print(f"  ok    {label}: tightest gap {tightest[0]:.2f} mm "
+          f"({tightest[1]} <-> {tightest[2]}), minimum {min_gap}")
+    return True
 
 
 def check_half_gap(pts):
@@ -151,8 +173,12 @@ def main():
           f"({sum(1 for n in pts if not n.startswith('mirror_'))} per half)\n")
 
     results = [
-        check_overlaps(pts, CAP_W, CAP_H, "keycap clearance"),
-        check_overlaps(pts, BODY_W, BODY_H, "switch body clearance"),
+        check_clearance(pts, CAP_W, CAP_H, "keycap clearance (MBK)",
+                        MIN_CAP_GAP),
+        check_clearance(pts, WIDE_W, WIDE_H, "keycap clearance (18x17)",
+                        MIN_WIDE_GAP),
+        check_clearance(pts, BODY_W, BODY_H, "switch flange clearance",
+                        MIN_BODY_GAP),
         check_half_gap(pts),
         check_reach(pts),
     ]

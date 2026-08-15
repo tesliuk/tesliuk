@@ -26,7 +26,7 @@ POINTS = BUILD / "points" / "points.yaml"
 ARC_STEPS = 8          # arcs are sampled, so fillets join their neighbours
 WELD = 0.02            # mm; endpoints closer than this are the same vertex
 MIN_NECK = 8.0         # mm; thinner than this and the board is snappable
-CLOSE = 6.0            # must match `close` in config.yaml
+CLOSE = 18.0          # must match `close` in config.yaml
 MAX_POCKET = 100.0     # mm^2; concave pockets bigger than this are notches
 
 
@@ -89,7 +89,44 @@ def segments():
                     cy + r * math.sin(2 * math.pi * i / steps))
                    for i in range(steps)]
             segs.extend(zip(pts, pts[1:] + pts[:1]))
-    return segs
+
+    # Arc sampling can emit zero-length segments (an arc with no sweep).
+    # They carry no boundary information and only confuse the degree count.
+    return [(a, b) for a, b in segs
+            if math.hypot(b[0] - a[0], b[1] - a[1]) > 1e-9]
+
+
+def weld(points):
+    """
+    Assign a canonical id to each point, merging any pair within WELD.
+
+    Rounding coordinates into fixed buckets is not enough: two vertices a
+    nanometre apart can straddle a bucket boundary and land in different
+    buckets, which shows up later as a phantom "dangling endpoint" on a
+    perfectly closed outline. Each point therefore also searches the
+    neighbouring buckets before it claims a new id.
+    """
+    q = max(WELD, 1e-9)
+    buckets = defaultdict(list)
+    ids = []
+    for p in points:
+        bx, by = int(math.floor(p[0] / q)), int(math.floor(p[1] / q))
+        found = None
+        for dx in (-1, 0, 1):
+            for dy in (-1, 0, 1):
+                for rid, rp in buckets.get((bx + dx, by + dy), ()):
+                    if math.hypot(rp[0] - p[0], rp[1] - p[1]) <= WELD:
+                        found = rid
+                        break
+                if found is not None:
+                    break
+            if found is not None:
+                break
+        if found is None:
+            found = len(buckets) * 0 + sum(len(v) for v in buckets.values())
+            buckets[(bx, by)].append((found, p))
+        ids.append(found)
+    return ids
 
 
 def mount_points():
@@ -191,19 +228,20 @@ def main():
         if ra != rb:
             parent[ra] = rb
 
-    q = max(WELD, 1e-9)
-    key = lambda p: (round(p[0] / q), round(p[1] / q))
+    flat = [p for seg in segs for p in seg]
+    ids = weld(flat)
+    idmap = {i: ids[2 * i:2 * i + 2] for i in range(len(segs))}
 
     degree = defaultdict(int)
-    for a, b in segs:
-        ka, kb = key(a), key(b)
+    for i, (a, b) in enumerate(segs):
+        ka, kb = idmap[i]
         union(ka, kb)
         degree[ka] += 1
         degree[kb] += 1
 
     comps = defaultdict(list)
-    for a, b in segs:
-        comps[find(key(a))].append((a, b))
+    for i, (a, b) in enumerate(segs):
+        comps[find(idmap[i][0])].append((a, b))
 
     ok = True
 
