@@ -45,8 +45,16 @@ at the *same* height short against each other at an 18 mm pitch. Index and
 inner are level, so that single gap is opened to **19.8 mm**. Every other gap
 stays at 18 mm, clearing on vertical offset alone.
 
-Board: **138 × 163 mm** per half. Case: **8.9 mm** tall before switches.
+Board: **138 × 133 mm** per half. Case: **8.9 mm** tall before switches.
 The width comes from the thumb cluster reaching ~37 mm inboard of the matrix.
+
+The controller, TRRS jack and reset button live in the **notch** between the
+finger matrix and the thumb cluster, not on a strip above the matrix. Because
+the thumb cluster runs inboard and down, that area is dead space already
+inside the bounding box, so the controller costs nothing in overall size —
+putting it above the matrix instead added 30 mm of board height for a part
+that is 33 × 18 mm. The USB port faces inboard, so the cable exits between
+the halves.
 
 ## What is in here
 
@@ -111,10 +119,10 @@ Stack, from the tray floor: 2 mm floor, 4 mm gap for the hotswap sockets,
 1.6 mm PCB, 1.3 mm plate. Six M2 × 6 mm self-tapping screws go down through
 the plate and PCB into the printed bosses.
 
-The controller and TRRS jack sit *above* the plate, through the opening at the
-top of the board — the controller is socketed on headers, so it stands proud.
-That is normal for a DIY split and keeps the USB port and jack accessible
-without any wall cutouts.
+The controller and TRRS jack sit *above* the plate, through the opening in the
+notch beside the thumb cluster — the controller is socketed on headers, so it
+stands proud. That is normal for a DIY split and keeps the USB port and jack
+accessible without any wall cutouts.
 
 ## Adjusting it
 

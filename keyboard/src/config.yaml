@@ -206,11 +206,28 @@ points:
     # They are excluded from the switch/diode footprints by name: every
     # filter below selects on `matrix_` / `thumb_` prefixes.
     # -------------------------------------------------------------------
+    # Controller lies FLAT (rotate 180), not on end. A Pro Micro is 33 x 18 mm,
+    # so standing it vertically forced the board ~12 mm taller than the tallest
+    # key just to clear it, which is what produced the tower of empty board
+    # above the matrix. Laid flat it spreads sideways across ground the board
+    # already covers. rotate 180 points the USB port inboard (+x), so the cable
+    # exits the top inner corner rather than across the keys.
+    # The controller sits in the notch between the finger matrix and the thumb
+    # cluster, NOT on a strip above the matrix.
+    #
+    # Because the thumb cluster runs inboard and down, the area outboard of it
+    # and below the number row is dead space already inside the board's
+    # bounding box. Putting the controller there costs nothing in overall
+    # size, whereas a strip above the matrix added ~30 mm of height for a part
+    # that is only 33 x 18 mm.
+    #
+    # rotate 180 lays it flat with the USB port facing inboard (+x), so the
+    # cable exits the inner edge between the two halves.
     mcu:
       anchor:
-        ref: matrix_inner_num
-        shift: [11, 25]
-        rotate: 90
+        ref: matrix_inner_top
+        shift: [28, -4]
+        rotate: 180
       columns:
         mcu:
       rows:
@@ -219,7 +236,7 @@ points:
     trrs:
       anchor:
         ref: matrix_inner_num
-        shift: [-13, 31]
+        shift: [28, 5]
       columns:
         trrs:
       rows:
@@ -228,7 +245,7 @@ points:
     reset:
       anchor:
         ref: matrix_inner_num
-        shift: [-4, 33]
+        shift: [16, 5]
       columns:
         reset:
       rows:
@@ -269,17 +286,17 @@ points:
         ref: matrix_pinky_home
       columns:
         m1:
-          key: {spread: 0, shift: [57.0, 80.3]}
+          key: {spread: 0, shift: [116.0, 46.3]}
         m2:
-          key: {spread: 0, shift: [69.0, 54.3]}
+          key: {spread: 0, shift: [64.0, 19.3]}
         m3:
-          key: {spread: 0, shift: [64.0, 3.3]}
+          key: {spread: 0, shift: [89.0, 1.3]}
         m4:
-          key: {spread: 0, shift: [64.0, -19.7]}
+          key: {spread: 0, shift: [116.0, -8.7]}
         m5:
-          key: {spread: 0, shift: [105.0, -31.7]}
+          key: {spread: 0, shift: [64.0, -19.7]}
         m6:
-          key: {spread: 0, shift: [110.0, -56.7]}
+          key: {spread: 0, shift: [91.0, -54.7]}
       rows:
         m:
 
@@ -330,21 +347,12 @@ outlines:
     - what: rectangle
       where: /^web_/
       size: [26, 16]
-    # Controller / jack / reset pad. These points carry rotation of their
-    # own, so each rectangle is drawn in that point's frame.
+    # One pad covers the whole controller area in the notch between the
+    # matrix and the thumb cluster. The jack and the reset button sit inside
+    # it, so they need no pad of their own.
     - what: rectangle
       where: /^mcu_/
-      size: [40, 24]
-    - what: rectangle
-      where: /^trrs_/
-      adjust:
-        shift: [0, -3]
-      size: [16, 34]
-    - what: rectangle
-      where: /^reset_/
-      adjust:
-        shift: [0, -8]
-      size: [14, 32]
+      size: [38, 64]
 
   # M2 clearance holes, subtracted from the board.
   _screws:
@@ -377,17 +385,7 @@ outlines:
       size: [26, 16]
     - what: rectangle
       where: /^(mirror_)?mcu_/
-      size: [40, 24]
-    - what: rectangle
-      where: /^(mirror_)?trrs_/
-      adjust:
-        shift: [0, -3]
-      size: [16, 34]
-    - what: rectangle
-      where: /^(mirror_)?reset_/
-      adjust:
-        shift: [0, -8]
-      size: [14, 32]
+      size: [38, 64]
 
   _screws_all:
     - what: circle
