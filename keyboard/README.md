@@ -33,7 +33,7 @@ Column stagger follows finger length: middle furthest forward, then ring,
 index, pinky, and the inner column pulled *back* because the index reaches
 inward and down, not inward and forward.
 
-Board: **108 × 163 mm** per half. Case: **8.9 mm** tall before switches.
+Board: **107 × 163 mm** per half. Case: **8.9 mm** tall before switches.
 
 ## What is in here
 
@@ -109,6 +109,10 @@ top of `src/config.yaml`. Two things worth knowing before you edit:
 - Ergogen's `stagger` is **cumulative**, not absolute. The config works around
   this by writing each column as `st_this - st_previous`, so you can edit the
   absolute numbers and the deltas take care of themselves.
+- The thumb cluster is anchored to `matrix_middle_bottom` with t1 at an
+  x-shift of exactly 0, so the innermost thumb key stays aligned with the
+  middle column — the one that sits furthest forward. Re-stagger the matrix
+  and the cluster tracks it instead of drifting inboard.
 - After moving anything, run `make mounts` to re-derive screw positions and
   paste the result back into the `mounts` zone. Screw positions depend on the
   layout, and a screw that lands in a switch cutout leaves that switch with

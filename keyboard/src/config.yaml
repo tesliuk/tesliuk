@@ -1,7 +1,7 @@
 meta:
   engine: 4.1.0
   name: pinkyless46
-  version: 0.2.0
+  version: 0.4.0
   author: tesliuk
 
 # ---------------------------------------------------------------------------
@@ -48,12 +48,10 @@ units:
   st_inner: -2
 
   # --- Thumb cluster ------------------------------------------------------
-  # Placed as explicit offsets from the bottom key of the index column, so
-  # the geometry is directly readable instead of emerging from chained
-  # rotations. t1-t3 are the comfortable arc; t4-t5 are the deliberate
-  # stretch island tucked below and inboard.
-  th_ref_x: 114     # matrix_index_bottom lands here; kept for reference only
-  th_ref_y: -156
+  # The cluster is positioned by explicit offsets from matrix_middle_bottom
+  # (see the `thumb` zone below), so the geometry is directly readable
+  # instead of emerging from chained rotations. t1-t3 are the comfortable
+  # arc; t4-t5 are the deliberate stretch island tucked below and inboard.
 
 points:
   key:
@@ -118,39 +116,47 @@ points:
     # spread/padding are zeroed so every key is positioned by an explicit
     # shift from the zone anchor rather than by grid advance. Rotations
     # follow the thumb's natural arc.
+    #
+    # ANCHORING: the zone hangs off matrix_middle_bottom, and t1 has an
+    # x-shift of exactly 0. That is not incidental - it makes "the innermost
+    # thumb key sits directly below the middle column" a structural property
+    # of the config rather than a number that has to be maintained by hand.
+    # The middle column is the one with the largest stagger, i.e. the column
+    # that sits furthest forward. Re-stagger the matrix and the thumb cluster
+    # tracks it automatically.
     # -------------------------------------------------------------------
     thumb:
       anchor:
-        ref: matrix_index_bottom
+        ref: matrix_middle_bottom
       columns:
         t1:
           key:
             spread: 0
-            shift: [-10, -24]
+            shift: [0, -29]
             rotate: -8
             column_net: C1
         t2:
           key:
             spread: 0
-            shift: [9, -30]
+            shift: [19, -35]
             rotate: -18
             column_net: C2
         t3:
           key:
             spread: 0
-            shift: [27, -38]
+            shift: [37, -43]
             rotate: -28
             column_net: C3
         t4:
           key:
             spread: 0
-            shift: [-4, -51]
+            shift: [6, -56]
             rotate: -14
             column_net: C4
         t5:
           key:
             spread: 0
-            shift: [15, -58]
+            shift: [25, -63]
             rotate: -24
             column_net: C5
       rows:
@@ -216,17 +222,17 @@ points:
         ref: matrix_pinky_home
       columns:
         m1:
-          key: {spread: 0, shift: [49.5, 72.3]}
+          key: {spread: 0, shift: [48.8, 72.3]}
         m2:
-          key: {spread: 0, shift: [69.5, 44.3]}
+          key: {spread: 0, shift: [68.8, 45.3]}
         m3:
-          key: {spread: 0, shift: [32.5, -22.7]}
+          key: {spread: 0, shift: [24.8, -24.7]}
         m4:
-          key: {spread: 0, shift: [82.5, -23.7]}
+          key: {spread: 0, shift: [58.8, -27.7]}
         m5:
-          key: {spread: 0, shift: [35.5, -59.7]}
+          key: {spread: 0, shift: [26.8, -59.7]}
         m6:
-          key: {spread: 0, shift: [80.5, -64.7]}
+          key: {spread: 0, shift: [72.8, -63.7]}
       rows:
         m:
 

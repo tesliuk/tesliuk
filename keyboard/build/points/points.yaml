@@ -1555,7 +1555,7 @@ matrix_inner_num:
             - 10
             - 10
 thumb_t1_thumb:
-    x: 104
+    x: 96
     'y': -180
     r: -8
     meta:
@@ -1567,8 +1567,8 @@ thumb_t1_thumb:
             - 0
         orient: 0
         shift:
-            - -10
-            - -24
+            - 0
+            - -29
         rotate: -8
         adjust: {}
         width: 18
@@ -1587,8 +1587,8 @@ thumb_t1_thumb:
                     key:
                         spread: 0
                         shift:
-                            - -10
-                            - -24
+                            - 0
+                            - -29
                         rotate: -8
                         column_net: C1
                     rows: {}
@@ -1597,8 +1597,8 @@ thumb_t1_thumb:
                     key:
                         spread: 0
                         shift:
-                            - 9
-                            - -30
+                            - 19
+                            - -35
                         rotate: -18
                         column_net: C2
                     rows: {}
@@ -1607,8 +1607,8 @@ thumb_t1_thumb:
                     key:
                         spread: 0
                         shift:
-                            - 27
-                            - -38
+                            - 37
+                            - -43
                         rotate: -28
                         column_net: C3
                     rows: {}
@@ -1617,8 +1617,8 @@ thumb_t1_thumb:
                     key:
                         spread: 0
                         shift:
-                            - -4
-                            - -51
+                            - 6
+                            - -56
                         rotate: -14
                         column_net: C4
                     rows: {}
@@ -1627,8 +1627,8 @@ thumb_t1_thumb:
                     key:
                         spread: 0
                         shift:
-                            - 15
-                            - -58
+                            - 25
+                            - -63
                         rotate: -24
                         column_net: C5
                     rows: {}
@@ -1641,8 +1641,8 @@ thumb_t1_thumb:
             key:
                 spread: 0
                 shift:
-                    - -10
-                    - -24
+                    - 0
+                    - -29
                 rotate: -8
                 column_net: C1
             rows: {}
@@ -1655,7 +1655,7 @@ thumb_t1_thumb:
             - 0
             - 0
 thumb_t2_thumb:
-    x: 123
+    x: 115
     'y': -186
     r: -18
     meta:
@@ -1667,8 +1667,8 @@ thumb_t2_thumb:
             - 0
         orient: 0
         shift:
-            - 9
-            - -30
+            - 19
+            - -35
         rotate: -18
         adjust: {}
         width: 18
@@ -1687,8 +1687,8 @@ thumb_t2_thumb:
                     key:
                         spread: 0
                         shift:
-                            - -10
-                            - -24
+                            - 0
+                            - -29
                         rotate: -8
                         column_net: C1
                     rows: {}
@@ -1697,8 +1697,8 @@ thumb_t2_thumb:
                     key:
                         spread: 0
                         shift:
-                            - 9
-                            - -30
+                            - 19
+                            - -35
                         rotate: -18
                         column_net: C2
                     rows: {}
@@ -1707,8 +1707,8 @@ thumb_t2_thumb:
                     key:
                         spread: 0
                         shift:
-                            - 27
-                            - -38
+                            - 37
+                            - -43
                         rotate: -28
                         column_net: C3
                     rows: {}
@@ -1717,8 +1717,8 @@ thumb_t2_thumb:
                     key:
                         spread: 0
                         shift:
-                            - -4
-                            - -51
+                            - 6
+                            - -56
                         rotate: -14
                         column_net: C4
                     rows: {}
@@ -1727,8 +1727,8 @@ thumb_t2_thumb:
                     key:
                         spread: 0
                         shift:
-                            - 15
-                            - -58
+                            - 25
+                            - -63
                         rotate: -24
                         column_net: C5
                     rows: {}
@@ -1741,8 +1741,8 @@ thumb_t2_thumb:
             key:
                 spread: 0
                 shift:
-                    - 9
-                    - -30
+                    - 19
+                    - -35
                 rotate: -18
                 column_net: C2
             rows: {}
@@ -1755,7 +1755,7 @@ thumb_t2_thumb:
             - 0
             - 0
 thumb_t3_thumb:
-    x: 141
+    x: 133
     'y': -194
     r: -28
     meta:
@@ -1767,8 +1767,8 @@ thumb_t3_thumb:
             - 0
         orient: 0
         shift:
-            - 27
-            - -38
+            - 37
+            - -43
         rotate: -28
         adjust: {}
         width: 18
@@ -1787,8 +1787,8 @@ thumb_t3_thumb:
                     key:
                         spread: 0
                         shift:
-                            - -10
-                            - -24
+                            - 0
+                            - -29
                         rotate: -8
                         column_net: C1
                     rows: {}
@@ -1797,8 +1797,8 @@ thumb_t3_thumb:
                     key:
                         spread: 0
                         shift:
-                            - 9
-                            - -30
+                            - 19
+                            - -35
                         rotate: -18
                         column_net: C2
                     rows: {}
@@ -1807,8 +1807,8 @@ thumb_t3_thumb:
                     key:
                         spread: 0
                         shift:
-                            - 27
-                            - -38
+                            - 37
+                            - -43
                         rotate: -28
                         column_net: C3
                     rows: {}
@@ -1817,8 +1817,8 @@ thumb_t3_thumb:
                     key:
                         spread: 0
                         shift:
-                            - -4
-                            - -51
+                            - 6
+                            - -56
                         rotate: -14
                         column_net: C4
                     rows: {}
@@ -1827,8 +1827,8 @@ thumb_t3_thumb:
                     key:
                         spread: 0
                         shift:
-                            - 15
-                            - -58
+                            - 25
+                            - -63
                         rotate: -24
                         column_net: C5
                     rows: {}
@@ -1841,8 +1841,8 @@ thumb_t3_thumb:
             key:
                 spread: 0
                 shift:
-                    - 27
-                    - -38
+                    - 37
+                    - -43
                 rotate: -28
                 column_net: C3
             rows: {}
@@ -1855,7 +1855,7 @@ thumb_t3_thumb:
             - 0
             - 0
 thumb_t4_thumb:
-    x: 110
+    x: 102
     'y': -207
     r: -14
     meta:
@@ -1867,8 +1867,8 @@ thumb_t4_thumb:
             - 0
         orient: 0
         shift:
-            - -4
-            - -51
+            - 6
+            - -56
         rotate: -14
         adjust: {}
         width: 18
@@ -1887,8 +1887,8 @@ thumb_t4_thumb:
                     key:
                         spread: 0
                         shift:
-                            - -10
-                            - -24
+                            - 0
+                            - -29
                         rotate: -8
                         column_net: C1
                     rows: {}
@@ -1897,8 +1897,8 @@ thumb_t4_thumb:
                     key:
                         spread: 0
                         shift:
-                            - 9
-                            - -30
+                            - 19
+                            - -35
                         rotate: -18
                         column_net: C2
                     rows: {}
@@ -1907,8 +1907,8 @@ thumb_t4_thumb:
                     key:
                         spread: 0
                         shift:
-                            - 27
-                            - -38
+                            - 37
+                            - -43
                         rotate: -28
                         column_net: C3
                     rows: {}
@@ -1917,8 +1917,8 @@ thumb_t4_thumb:
                     key:
                         spread: 0
                         shift:
-                            - -4
-                            - -51
+                            - 6
+                            - -56
                         rotate: -14
                         column_net: C4
                     rows: {}
@@ -1927,8 +1927,8 @@ thumb_t4_thumb:
                     key:
                         spread: 0
                         shift:
-                            - 15
-                            - -58
+                            - 25
+                            - -63
                         rotate: -24
                         column_net: C5
                     rows: {}
@@ -1941,8 +1941,8 @@ thumb_t4_thumb:
             key:
                 spread: 0
                 shift:
-                    - -4
-                    - -51
+                    - 6
+                    - -56
                 rotate: -14
                 column_net: C4
             rows: {}
@@ -1955,7 +1955,7 @@ thumb_t4_thumb:
             - 0
             - 0
 thumb_t5_thumb:
-    x: 129
+    x: 121
     'y': -214
     r: -24
     meta:
@@ -1967,8 +1967,8 @@ thumb_t5_thumb:
             - 0
         orient: 0
         shift:
-            - 15
-            - -58
+            - 25
+            - -63
         rotate: -24
         adjust: {}
         width: 18
@@ -1987,8 +1987,8 @@ thumb_t5_thumb:
                     key:
                         spread: 0
                         shift:
-                            - -10
-                            - -24
+                            - 0
+                            - -29
                         rotate: -8
                         column_net: C1
                     rows: {}
@@ -1997,8 +1997,8 @@ thumb_t5_thumb:
                     key:
                         spread: 0
                         shift:
-                            - 9
-                            - -30
+                            - 19
+                            - -35
                         rotate: -18
                         column_net: C2
                     rows: {}
@@ -2007,8 +2007,8 @@ thumb_t5_thumb:
                     key:
                         spread: 0
                         shift:
-                            - 27
-                            - -38
+                            - 37
+                            - -43
                         rotate: -28
                         column_net: C3
                     rows: {}
@@ -2017,8 +2017,8 @@ thumb_t5_thumb:
                     key:
                         spread: 0
                         shift:
-                            - -4
-                            - -51
+                            - 6
+                            - -56
                         rotate: -14
                         column_net: C4
                     rows: {}
@@ -2027,8 +2027,8 @@ thumb_t5_thumb:
                     key:
                         spread: 0
                         shift:
-                            - 15
-                            - -58
+                            - 25
+                            - -63
                         rotate: -24
                         column_net: C5
                     rows: {}
@@ -2041,8 +2041,8 @@ thumb_t5_thumb:
             key:
                 spread: 0
                 shift:
-                    - 15
-                    - -58
+                    - 25
+                    - -63
                 rotate: -24
                 column_net: C5
             rows: {}
@@ -2181,7 +2181,7 @@ reset_reset_reset:
             - 0
             - 0
 mounts_m1_m:
-    x: 109.5
+    x: 108.8
     'y': -70.7
     r: 0
     meta:
@@ -2193,7 +2193,7 @@ mounts_m1_m:
             - 0
         orient: 0
         shift:
-            - 49.5
+            - 48.8
             - 72.3
         rotate: 0
         adjust: {}
@@ -2211,7 +2211,7 @@ mounts_m1_m:
                     key:
                         spread: 0
                         shift:
-                            - 49.5
+                            - 48.8
                             - 72.3
                     rows: {}
                     name: m1
@@ -2219,31 +2219,31 @@ mounts_m1_m:
                     key:
                         spread: 0
                         shift:
-                            - 69.5
-                            - 44.3
+                            - 68.8
+                            - 45.3
                     rows: {}
                     name: m2
                 m3:
                     key:
                         spread: 0
                         shift:
-                            - 32.5
-                            - -22.7
+                            - 24.8
+                            - -24.7
                     rows: {}
                     name: m3
                 m4:
                     key:
                         spread: 0
                         shift:
-                            - 82.5
-                            - -23.7
+                            - 58.8
+                            - -27.7
                     rows: {}
                     name: m4
                 m5:
                     key:
                         spread: 0
                         shift:
-                            - 35.5
+                            - 26.8
                             - -59.7
                     rows: {}
                     name: m5
@@ -2251,8 +2251,8 @@ mounts_m1_m:
                     key:
                         spread: 0
                         shift:
-                            - 80.5
-                            - -64.7
+                            - 72.8
+                            - -63.7
                     rows: {}
                     name: m6
             rows:
@@ -2262,7 +2262,7 @@ mounts_m1_m:
             key:
                 spread: 0
                 shift:
-                    - 49.5
+                    - 48.8
                     - 72.3
             rows: {}
             name: m1
@@ -2274,8 +2274,8 @@ mounts_m1_m:
             - 0
             - 0
 mounts_m2_m:
-    x: 129.5
-    'y': -98.7
+    x: 128.8
+    'y': -97.7
     r: 0
     meta:
         stagger: 0
@@ -2286,8 +2286,8 @@ mounts_m2_m:
             - 0
         orient: 0
         shift:
-            - 69.5
-            - 44.3
+            - 68.8
+            - 45.3
         rotate: 0
         adjust: {}
         width: 18
@@ -2304,7 +2304,7 @@ mounts_m2_m:
                     key:
                         spread: 0
                         shift:
-                            - 49.5
+                            - 48.8
                             - 72.3
                     rows: {}
                     name: m1
@@ -2312,31 +2312,31 @@ mounts_m2_m:
                     key:
                         spread: 0
                         shift:
-                            - 69.5
-                            - 44.3
+                            - 68.8
+                            - 45.3
                     rows: {}
                     name: m2
                 m3:
                     key:
                         spread: 0
                         shift:
-                            - 32.5
-                            - -22.7
+                            - 24.8
+                            - -24.7
                     rows: {}
                     name: m3
                 m4:
                     key:
                         spread: 0
                         shift:
-                            - 82.5
-                            - -23.7
+                            - 58.8
+                            - -27.7
                     rows: {}
                     name: m4
                 m5:
                     key:
                         spread: 0
                         shift:
-                            - 35.5
+                            - 26.8
                             - -59.7
                     rows: {}
                     name: m5
@@ -2344,8 +2344,8 @@ mounts_m2_m:
                     key:
                         spread: 0
                         shift:
-                            - 80.5
-                            - -64.7
+                            - 72.8
+                            - -63.7
                     rows: {}
                     name: m6
             rows:
@@ -2355,8 +2355,8 @@ mounts_m2_m:
             key:
                 spread: 0
                 shift:
-                    - 69.5
-                    - 44.3
+                    - 68.8
+                    - 45.3
             rows: {}
             name: m2
         row: m
@@ -2367,8 +2367,8 @@ mounts_m2_m:
             - 0
             - 0
 mounts_m3_m:
-    x: 92.5
-    'y': -165.7
+    x: 84.8
+    'y': -167.7
     r: 0
     meta:
         stagger: 0
@@ -2379,8 +2379,8 @@ mounts_m3_m:
             - 0
         orient: 0
         shift:
-            - 32.5
-            - -22.7
+            - 24.8
+            - -24.7
         rotate: 0
         adjust: {}
         width: 18
@@ -2397,7 +2397,7 @@ mounts_m3_m:
                     key:
                         spread: 0
                         shift:
-                            - 49.5
+                            - 48.8
                             - 72.3
                     rows: {}
                     name: m1
@@ -2405,31 +2405,31 @@ mounts_m3_m:
                     key:
                         spread: 0
                         shift:
-                            - 69.5
-                            - 44.3
+                            - 68.8
+                            - 45.3
                     rows: {}
                     name: m2
                 m3:
                     key:
                         spread: 0
                         shift:
-                            - 32.5
-                            - -22.7
+                            - 24.8
+                            - -24.7
                     rows: {}
                     name: m3
                 m4:
                     key:
                         spread: 0
                         shift:
-                            - 82.5
-                            - -23.7
+                            - 58.8
+                            - -27.7
                     rows: {}
                     name: m4
                 m5:
                     key:
                         spread: 0
                         shift:
-                            - 35.5
+                            - 26.8
                             - -59.7
                     rows: {}
                     name: m5
@@ -2437,8 +2437,8 @@ mounts_m3_m:
                     key:
                         spread: 0
                         shift:
-                            - 80.5
-                            - -64.7
+                            - 72.8
+                            - -63.7
                     rows: {}
                     name: m6
             rows:
@@ -2448,8 +2448,8 @@ mounts_m3_m:
             key:
                 spread: 0
                 shift:
-                    - 32.5
-                    - -22.7
+                    - 24.8
+                    - -24.7
             rows: {}
             name: m3
         row: m
@@ -2460,8 +2460,8 @@ mounts_m3_m:
             - 0
             - 0
 mounts_m4_m:
-    x: 142.5
-    'y': -166.7
+    x: 118.8
+    'y': -170.7
     r: 0
     meta:
         stagger: 0
@@ -2472,8 +2472,8 @@ mounts_m4_m:
             - 0
         orient: 0
         shift:
-            - 82.5
-            - -23.7
+            - 58.8
+            - -27.7
         rotate: 0
         adjust: {}
         width: 18
@@ -2490,7 +2490,7 @@ mounts_m4_m:
                     key:
                         spread: 0
                         shift:
-                            - 49.5
+                            - 48.8
                             - 72.3
                     rows: {}
                     name: m1
@@ -2498,31 +2498,31 @@ mounts_m4_m:
                     key:
                         spread: 0
                         shift:
-                            - 69.5
-                            - 44.3
+                            - 68.8
+                            - 45.3
                     rows: {}
                     name: m2
                 m3:
                     key:
                         spread: 0
                         shift:
-                            - 32.5
-                            - -22.7
+                            - 24.8
+                            - -24.7
                     rows: {}
                     name: m3
                 m4:
                     key:
                         spread: 0
                         shift:
-                            - 82.5
-                            - -23.7
+                            - 58.8
+                            - -27.7
                     rows: {}
                     name: m4
                 m5:
                     key:
                         spread: 0
                         shift:
-                            - 35.5
+                            - 26.8
                             - -59.7
                     rows: {}
                     name: m5
@@ -2530,8 +2530,8 @@ mounts_m4_m:
                     key:
                         spread: 0
                         shift:
-                            - 80.5
-                            - -64.7
+                            - 72.8
+                            - -63.7
                     rows: {}
                     name: m6
             rows:
@@ -2541,8 +2541,8 @@ mounts_m4_m:
             key:
                 spread: 0
                 shift:
-                    - 82.5
-                    - -23.7
+                    - 58.8
+                    - -27.7
             rows: {}
             name: m4
         row: m
@@ -2553,7 +2553,7 @@ mounts_m4_m:
             - 0
             - 0
 mounts_m5_m:
-    x: 95.5
+    x: 86.8
     'y': -202.7
     r: 0
     meta:
@@ -2565,7 +2565,7 @@ mounts_m5_m:
             - 0
         orient: 0
         shift:
-            - 35.5
+            - 26.8
             - -59.7
         rotate: 0
         adjust: {}
@@ -2583,7 +2583,7 @@ mounts_m5_m:
                     key:
                         spread: 0
                         shift:
-                            - 49.5
+                            - 48.8
                             - 72.3
                     rows: {}
                     name: m1
@@ -2591,31 +2591,31 @@ mounts_m5_m:
                     key:
                         spread: 0
                         shift:
-                            - 69.5
-                            - 44.3
+                            - 68.8
+                            - 45.3
                     rows: {}
                     name: m2
                 m3:
                     key:
                         spread: 0
                         shift:
-                            - 32.5
-                            - -22.7
+                            - 24.8
+                            - -24.7
                     rows: {}
                     name: m3
                 m4:
                     key:
                         spread: 0
                         shift:
-                            - 82.5
-                            - -23.7
+                            - 58.8
+                            - -27.7
                     rows: {}
                     name: m4
                 m5:
                     key:
                         spread: 0
                         shift:
-                            - 35.5
+                            - 26.8
                             - -59.7
                     rows: {}
                     name: m5
@@ -2623,8 +2623,8 @@ mounts_m5_m:
                     key:
                         spread: 0
                         shift:
-                            - 80.5
-                            - -64.7
+                            - 72.8
+                            - -63.7
                     rows: {}
                     name: m6
             rows:
@@ -2634,7 +2634,7 @@ mounts_m5_m:
             key:
                 spread: 0
                 shift:
-                    - 35.5
+                    - 26.8
                     - -59.7
             rows: {}
             name: m5
@@ -2646,8 +2646,8 @@ mounts_m5_m:
             - 0
             - 0
 mounts_m6_m:
-    x: 140.5
-    'y': -207.7
+    x: 132.8
+    'y': -206.7
     r: 0
     meta:
         stagger: 0
@@ -2658,8 +2658,8 @@ mounts_m6_m:
             - 0
         orient: 0
         shift:
-            - 80.5
-            - -64.7
+            - 72.8
+            - -63.7
         rotate: 0
         adjust: {}
         width: 18
@@ -2676,7 +2676,7 @@ mounts_m6_m:
                     key:
                         spread: 0
                         shift:
-                            - 49.5
+                            - 48.8
                             - 72.3
                     rows: {}
                     name: m1
@@ -2684,31 +2684,31 @@ mounts_m6_m:
                     key:
                         spread: 0
                         shift:
-                            - 69.5
-                            - 44.3
+                            - 68.8
+                            - 45.3
                     rows: {}
                     name: m2
                 m3:
                     key:
                         spread: 0
                         shift:
-                            - 32.5
-                            - -22.7
+                            - 24.8
+                            - -24.7
                     rows: {}
                     name: m3
                 m4:
                     key:
                         spread: 0
                         shift:
-                            - 82.5
-                            - -23.7
+                            - 58.8
+                            - -27.7
                     rows: {}
                     name: m4
                 m5:
                     key:
                         spread: 0
                         shift:
-                            - 35.5
+                            - 26.8
                             - -59.7
                     rows: {}
                     name: m5
@@ -2716,8 +2716,8 @@ mounts_m6_m:
                     key:
                         spread: 0
                         shift:
-                            - 80.5
-                            - -64.7
+                            - 72.8
+                            - -63.7
                     rows: {}
                     name: m6
             rows:
@@ -2727,8 +2727,8 @@ mounts_m6_m:
             key:
                 spread: 0
                 shift:
-                    - 80.5
-                    - -64.7
+                    - 72.8
+                    - -63.7
             rows: {}
             name: m6
         row: m
@@ -4295,7 +4295,7 @@ mirror_matrix_inner_num:
             - 10
             - 10
 mirror_thumb_t1_thumb:
-    x: 296
+    x: 304
     'y': -180
     r: 8
     meta:
@@ -4307,8 +4307,8 @@ mirror_thumb_t1_thumb:
             - 0
         orient: 0
         shift:
-            - -10
-            - -24
+            - 0
+            - -29
         rotate: -8
         adjust: {}
         width: 18
@@ -4327,8 +4327,8 @@ mirror_thumb_t1_thumb:
                     key:
                         spread: 0
                         shift:
-                            - -10
-                            - -24
+                            - 0
+                            - -29
                         rotate: -8
                         column_net: C1
                     rows: {}
@@ -4337,8 +4337,8 @@ mirror_thumb_t1_thumb:
                     key:
                         spread: 0
                         shift:
-                            - 9
-                            - -30
+                            - 19
+                            - -35
                         rotate: -18
                         column_net: C2
                     rows: {}
@@ -4347,8 +4347,8 @@ mirror_thumb_t1_thumb:
                     key:
                         spread: 0
                         shift:
-                            - 27
-                            - -38
+                            - 37
+                            - -43
                         rotate: -28
                         column_net: C3
                     rows: {}
@@ -4357,8 +4357,8 @@ mirror_thumb_t1_thumb:
                     key:
                         spread: 0
                         shift:
-                            - -4
-                            - -51
+                            - 6
+                            - -56
                         rotate: -14
                         column_net: C4
                     rows: {}
@@ -4367,8 +4367,8 @@ mirror_thumb_t1_thumb:
                     key:
                         spread: 0
                         shift:
-                            - 15
-                            - -58
+                            - 25
+                            - -63
                         rotate: -24
                         column_net: C5
                     rows: {}
@@ -4381,8 +4381,8 @@ mirror_thumb_t1_thumb:
             key:
                 spread: 0
                 shift:
-                    - -10
-                    - -24
+                    - 0
+                    - -29
                 rotate: -8
                 column_net: C1
             rows: {}
@@ -4395,7 +4395,7 @@ mirror_thumb_t1_thumb:
             - 0
             - 0
 mirror_thumb_t2_thumb:
-    x: 277
+    x: 285
     'y': -186
     r: 18
     meta:
@@ -4407,8 +4407,8 @@ mirror_thumb_t2_thumb:
             - 0
         orient: 0
         shift:
-            - 9
-            - -30
+            - 19
+            - -35
         rotate: -18
         adjust: {}
         width: 18
@@ -4427,8 +4427,8 @@ mirror_thumb_t2_thumb:
                     key:
                         spread: 0
                         shift:
-                            - -10
-                            - -24
+                            - 0
+                            - -29
                         rotate: -8
                         column_net: C1
                     rows: {}
@@ -4437,8 +4437,8 @@ mirror_thumb_t2_thumb:
                     key:
                         spread: 0
                         shift:
-                            - 9
-                            - -30
+                            - 19
+                            - -35
                         rotate: -18
                         column_net: C2
                     rows: {}
@@ -4447,8 +4447,8 @@ mirror_thumb_t2_thumb:
                     key:
                         spread: 0
                         shift:
-                            - 27
-                            - -38
+                            - 37
+                            - -43
                         rotate: -28
                         column_net: C3
                     rows: {}
@@ -4457,8 +4457,8 @@ mirror_thumb_t2_thumb:
                     key:
                         spread: 0
                         shift:
-                            - -4
-                            - -51
+                            - 6
+                            - -56
                         rotate: -14
                         column_net: C4
                     rows: {}
@@ -4467,8 +4467,8 @@ mirror_thumb_t2_thumb:
                     key:
                         spread: 0
                         shift:
-                            - 15
-                            - -58
+                            - 25
+                            - -63
                         rotate: -24
                         column_net: C5
                     rows: {}
@@ -4481,8 +4481,8 @@ mirror_thumb_t2_thumb:
             key:
                 spread: 0
                 shift:
-                    - 9
-                    - -30
+                    - 19
+                    - -35
                 rotate: -18
                 column_net: C2
             rows: {}
@@ -4495,7 +4495,7 @@ mirror_thumb_t2_thumb:
             - 0
             - 0
 mirror_thumb_t3_thumb:
-    x: 259
+    x: 267
     'y': -194
     r: 28
     meta:
@@ -4507,8 +4507,8 @@ mirror_thumb_t3_thumb:
             - 0
         orient: 0
         shift:
-            - 27
-            - -38
+            - 37
+            - -43
         rotate: -28
         adjust: {}
         width: 18
@@ -4527,8 +4527,8 @@ mirror_thumb_t3_thumb:
                     key:
                         spread: 0
                         shift:
-                            - -10
-                            - -24
+                            - 0
+                            - -29
                         rotate: -8
                         column_net: C1
                     rows: {}
@@ -4537,8 +4537,8 @@ mirror_thumb_t3_thumb:
                     key:
                         spread: 0
                         shift:
-                            - 9
-                            - -30
+                            - 19
+                            - -35
                         rotate: -18
                         column_net: C2
                     rows: {}
@@ -4547,8 +4547,8 @@ mirror_thumb_t3_thumb:
                     key:
                         spread: 0
                         shift:
-                            - 27
-                            - -38
+                            - 37
+                            - -43
                         rotate: -28
                         column_net: C3
                     rows: {}
@@ -4557,8 +4557,8 @@ mirror_thumb_t3_thumb:
                     key:
                         spread: 0
                         shift:
-                            - -4
-                            - -51
+                            - 6
+                            - -56
                         rotate: -14
                         column_net: C4
                     rows: {}
@@ -4567,8 +4567,8 @@ mirror_thumb_t3_thumb:
                     key:
                         spread: 0
                         shift:
-                            - 15
-                            - -58
+                            - 25
+                            - -63
                         rotate: -24
                         column_net: C5
                     rows: {}
@@ -4581,8 +4581,8 @@ mirror_thumb_t3_thumb:
             key:
                 spread: 0
                 shift:
-                    - 27
-                    - -38
+                    - 37
+                    - -43
                 rotate: -28
                 column_net: C3
             rows: {}
@@ -4595,7 +4595,7 @@ mirror_thumb_t3_thumb:
             - 0
             - 0
 mirror_thumb_t4_thumb:
-    x: 290
+    x: 298
     'y': -207
     r: 14
     meta:
@@ -4607,8 +4607,8 @@ mirror_thumb_t4_thumb:
             - 0
         orient: 0
         shift:
-            - -4
-            - -51
+            - 6
+            - -56
         rotate: -14
         adjust: {}
         width: 18
@@ -4627,8 +4627,8 @@ mirror_thumb_t4_thumb:
                     key:
                         spread: 0
                         shift:
-                            - -10
-                            - -24
+                            - 0
+                            - -29
                         rotate: -8
                         column_net: C1
                     rows: {}
@@ -4637,8 +4637,8 @@ mirror_thumb_t4_thumb:
                     key:
                         spread: 0
                         shift:
-                            - 9
-                            - -30
+                            - 19
+                            - -35
                         rotate: -18
                         column_net: C2
                     rows: {}
@@ -4647,8 +4647,8 @@ mirror_thumb_t4_thumb:
                     key:
                         spread: 0
                         shift:
-                            - 27
-                            - -38
+                            - 37
+                            - -43
                         rotate: -28
                         column_net: C3
                     rows: {}
@@ -4657,8 +4657,8 @@ mirror_thumb_t4_thumb:
                     key:
                         spread: 0
                         shift:
-                            - -4
-                            - -51
+                            - 6
+                            - -56
                         rotate: -14
                         column_net: C4
                     rows: {}
@@ -4667,8 +4667,8 @@ mirror_thumb_t4_thumb:
                     key:
                         spread: 0
                         shift:
-                            - 15
-                            - -58
+                            - 25
+                            - -63
                         rotate: -24
                         column_net: C5
                     rows: {}
@@ -4681,8 +4681,8 @@ mirror_thumb_t4_thumb:
             key:
                 spread: 0
                 shift:
-                    - -4
-                    - -51
+                    - 6
+                    - -56
                 rotate: -14
                 column_net: C4
             rows: {}
@@ -4695,7 +4695,7 @@ mirror_thumb_t4_thumb:
             - 0
             - 0
 mirror_thumb_t5_thumb:
-    x: 271
+    x: 279
     'y': -214
     r: 24
     meta:
@@ -4707,8 +4707,8 @@ mirror_thumb_t5_thumb:
             - 0
         orient: 0
         shift:
-            - 15
-            - -58
+            - 25
+            - -63
         rotate: -24
         adjust: {}
         width: 18
@@ -4727,8 +4727,8 @@ mirror_thumb_t5_thumb:
                     key:
                         spread: 0
                         shift:
-                            - -10
-                            - -24
+                            - 0
+                            - -29
                         rotate: -8
                         column_net: C1
                     rows: {}
@@ -4737,8 +4737,8 @@ mirror_thumb_t5_thumb:
                     key:
                         spread: 0
                         shift:
-                            - 9
-                            - -30
+                            - 19
+                            - -35
                         rotate: -18
                         column_net: C2
                     rows: {}
@@ -4747,8 +4747,8 @@ mirror_thumb_t5_thumb:
                     key:
                         spread: 0
                         shift:
-                            - 27
-                            - -38
+                            - 37
+                            - -43
                         rotate: -28
                         column_net: C3
                     rows: {}
@@ -4757,8 +4757,8 @@ mirror_thumb_t5_thumb:
                     key:
                         spread: 0
                         shift:
-                            - -4
-                            - -51
+                            - 6
+                            - -56
                         rotate: -14
                         column_net: C4
                     rows: {}
@@ -4767,8 +4767,8 @@ mirror_thumb_t5_thumb:
                     key:
                         spread: 0
                         shift:
-                            - 15
-                            - -58
+                            - 25
+                            - -63
                         rotate: -24
                         column_net: C5
                     rows: {}
@@ -4781,8 +4781,8 @@ mirror_thumb_t5_thumb:
             key:
                 spread: 0
                 shift:
-                    - 15
-                    - -58
+                    - 25
+                    - -63
                 rotate: -24
                 column_net: C5
             rows: {}
@@ -4921,7 +4921,7 @@ mirror_reset_reset_reset:
             - 0
             - 0
 mirror_mounts_m1_m:
-    x: 290.5
+    x: 291.2
     'y': -70.7
     r: -0.0
     meta:
@@ -4933,7 +4933,7 @@ mirror_mounts_m1_m:
             - 0
         orient: 0
         shift:
-            - 49.5
+            - 48.8
             - 72.3
         rotate: 0
         adjust: {}
@@ -4951,7 +4951,7 @@ mirror_mounts_m1_m:
                     key:
                         spread: 0
                         shift:
-                            - 49.5
+                            - 48.8
                             - 72.3
                     rows: {}
                     name: m1
@@ -4959,31 +4959,31 @@ mirror_mounts_m1_m:
                     key:
                         spread: 0
                         shift:
-                            - 69.5
-                            - 44.3
+                            - 68.8
+                            - 45.3
                     rows: {}
                     name: m2
                 m3:
                     key:
                         spread: 0
                         shift:
-                            - 32.5
-                            - -22.7
+                            - 24.8
+                            - -24.7
                     rows: {}
                     name: m3
                 m4:
                     key:
                         spread: 0
                         shift:
-                            - 82.5
-                            - -23.7
+                            - 58.8
+                            - -27.7
                     rows: {}
                     name: m4
                 m5:
                     key:
                         spread: 0
                         shift:
-                            - 35.5
+                            - 26.8
                             - -59.7
                     rows: {}
                     name: m5
@@ -4991,8 +4991,8 @@ mirror_mounts_m1_m:
                     key:
                         spread: 0
                         shift:
-                            - 80.5
-                            - -64.7
+                            - 72.8
+                            - -63.7
                     rows: {}
                     name: m6
             rows:
@@ -5002,7 +5002,7 @@ mirror_mounts_m1_m:
             key:
                 spread: 0
                 shift:
-                    - 49.5
+                    - 48.8
                     - 72.3
             rows: {}
             name: m1
@@ -5014,8 +5014,8 @@ mirror_mounts_m1_m:
             - 0
             - 0
 mirror_mounts_m2_m:
-    x: 270.5
-    'y': -98.7
+    x: 271.2
+    'y': -97.7
     r: -0.0
     meta:
         stagger: 0
@@ -5026,8 +5026,8 @@ mirror_mounts_m2_m:
             - 0
         orient: 0
         shift:
-            - 69.5
-            - 44.3
+            - 68.8
+            - 45.3
         rotate: 0
         adjust: {}
         width: 18
@@ -5044,7 +5044,7 @@ mirror_mounts_m2_m:
                     key:
                         spread: 0
                         shift:
-                            - 49.5
+                            - 48.8
                             - 72.3
                     rows: {}
                     name: m1
@@ -5052,31 +5052,31 @@ mirror_mounts_m2_m:
                     key:
                         spread: 0
                         shift:
-                            - 69.5
-                            - 44.3
+                            - 68.8
+                            - 45.3
                     rows: {}
                     name: m2
                 m3:
                     key:
                         spread: 0
                         shift:
-                            - 32.5
-                            - -22.7
+                            - 24.8
+                            - -24.7
                     rows: {}
                     name: m3
                 m4:
                     key:
                         spread: 0
                         shift:
-                            - 82.5
-                            - -23.7
+                            - 58.8
+                            - -27.7
                     rows: {}
                     name: m4
                 m5:
                     key:
                         spread: 0
                         shift:
-                            - 35.5
+                            - 26.8
                             - -59.7
                     rows: {}
                     name: m5
@@ -5084,8 +5084,8 @@ mirror_mounts_m2_m:
                     key:
                         spread: 0
                         shift:
-                            - 80.5
-                            - -64.7
+                            - 72.8
+                            - -63.7
                     rows: {}
                     name: m6
             rows:
@@ -5095,8 +5095,8 @@ mirror_mounts_m2_m:
             key:
                 spread: 0
                 shift:
-                    - 69.5
-                    - 44.3
+                    - 68.8
+                    - 45.3
             rows: {}
             name: m2
         row: m
@@ -5107,8 +5107,8 @@ mirror_mounts_m2_m:
             - 0
             - 0
 mirror_mounts_m3_m:
-    x: 307.5
-    'y': -165.7
+    x: 315.2
+    'y': -167.7
     r: -0.0
     meta:
         stagger: 0
@@ -5119,8 +5119,8 @@ mirror_mounts_m3_m:
             - 0
         orient: 0
         shift:
-            - 32.5
-            - -22.7
+            - 24.8
+            - -24.7
         rotate: 0
         adjust: {}
         width: 18
@@ -5137,7 +5137,7 @@ mirror_mounts_m3_m:
                     key:
                         spread: 0
                         shift:
-                            - 49.5
+                            - 48.8
                             - 72.3
                     rows: {}
                     name: m1
@@ -5145,31 +5145,31 @@ mirror_mounts_m3_m:
                     key:
                         spread: 0
                         shift:
-                            - 69.5
-                            - 44.3
+                            - 68.8
+                            - 45.3
                     rows: {}
                     name: m2
                 m3:
                     key:
                         spread: 0
                         shift:
-                            - 32.5
-                            - -22.7
+                            - 24.8
+                            - -24.7
                     rows: {}
                     name: m3
                 m4:
                     key:
                         spread: 0
                         shift:
-                            - 82.5
-                            - -23.7
+                            - 58.8
+                            - -27.7
                     rows: {}
                     name: m4
                 m5:
                     key:
                         spread: 0
                         shift:
-                            - 35.5
+                            - 26.8
                             - -59.7
                     rows: {}
                     name: m5
@@ -5177,8 +5177,8 @@ mirror_mounts_m3_m:
                     key:
                         spread: 0
                         shift:
-                            - 80.5
-                            - -64.7
+                            - 72.8
+                            - -63.7
                     rows: {}
                     name: m6
             rows:
@@ -5188,8 +5188,8 @@ mirror_mounts_m3_m:
             key:
                 spread: 0
                 shift:
-                    - 32.5
-                    - -22.7
+                    - 24.8
+                    - -24.7
             rows: {}
             name: m3
         row: m
@@ -5200,8 +5200,8 @@ mirror_mounts_m3_m:
             - 0
             - 0
 mirror_mounts_m4_m:
-    x: 257.5
-    'y': -166.7
+    x: 281.2
+    'y': -170.7
     r: -0.0
     meta:
         stagger: 0
@@ -5212,8 +5212,8 @@ mirror_mounts_m4_m:
             - 0
         orient: 0
         shift:
-            - 82.5
-            - -23.7
+            - 58.8
+            - -27.7
         rotate: 0
         adjust: {}
         width: 18
@@ -5230,7 +5230,7 @@ mirror_mounts_m4_m:
                     key:
                         spread: 0
                         shift:
-                            - 49.5
+                            - 48.8
                             - 72.3
                     rows: {}
                     name: m1
@@ -5238,31 +5238,31 @@ mirror_mounts_m4_m:
                     key:
                         spread: 0
                         shift:
-                            - 69.5
-                            - 44.3
+                            - 68.8
+                            - 45.3
                     rows: {}
                     name: m2
                 m3:
                     key:
                         spread: 0
                         shift:
-                            - 32.5
-                            - -22.7
+                            - 24.8
+                            - -24.7
                     rows: {}
                     name: m3
                 m4:
                     key:
                         spread: 0
                         shift:
-                            - 82.5
-                            - -23.7
+                            - 58.8
+                            - -27.7
                     rows: {}
                     name: m4
                 m5:
                     key:
                         spread: 0
                         shift:
-                            - 35.5
+                            - 26.8
                             - -59.7
                     rows: {}
                     name: m5
@@ -5270,8 +5270,8 @@ mirror_mounts_m4_m:
                     key:
                         spread: 0
                         shift:
-                            - 80.5
-                            - -64.7
+                            - 72.8
+                            - -63.7
                     rows: {}
                     name: m6
             rows:
@@ -5281,8 +5281,8 @@ mirror_mounts_m4_m:
             key:
                 spread: 0
                 shift:
-                    - 82.5
-                    - -23.7
+                    - 58.8
+                    - -27.7
             rows: {}
             name: m4
         row: m
@@ -5293,7 +5293,7 @@ mirror_mounts_m4_m:
             - 0
             - 0
 mirror_mounts_m5_m:
-    x: 304.5
+    x: 313.2
     'y': -202.7
     r: -0.0
     meta:
@@ -5305,7 +5305,7 @@ mirror_mounts_m5_m:
             - 0
         orient: 0
         shift:
-            - 35.5
+            - 26.8
             - -59.7
         rotate: 0
         adjust: {}
@@ -5323,7 +5323,7 @@ mirror_mounts_m5_m:
                     key:
                         spread: 0
                         shift:
-                            - 49.5
+                            - 48.8
                             - 72.3
                     rows: {}
                     name: m1
@@ -5331,31 +5331,31 @@ mirror_mounts_m5_m:
                     key:
                         spread: 0
                         shift:
-                            - 69.5
-                            - 44.3
+                            - 68.8
+                            - 45.3
                     rows: {}
                     name: m2
                 m3:
                     key:
                         spread: 0
                         shift:
-                            - 32.5
-                            - -22.7
+                            - 24.8
+                            - -24.7
                     rows: {}
                     name: m3
                 m4:
                     key:
                         spread: 0
                         shift:
-                            - 82.5
-                            - -23.7
+                            - 58.8
+                            - -27.7
                     rows: {}
                     name: m4
                 m5:
                     key:
                         spread: 0
                         shift:
-                            - 35.5
+                            - 26.8
                             - -59.7
                     rows: {}
                     name: m5
@@ -5363,8 +5363,8 @@ mirror_mounts_m5_m:
                     key:
                         spread: 0
                         shift:
-                            - 80.5
-                            - -64.7
+                            - 72.8
+                            - -63.7
                     rows: {}
                     name: m6
             rows:
@@ -5374,7 +5374,7 @@ mirror_mounts_m5_m:
             key:
                 spread: 0
                 shift:
-                    - 35.5
+                    - 26.8
                     - -59.7
             rows: {}
             name: m5
@@ -5386,8 +5386,8 @@ mirror_mounts_m5_m:
             - 0
             - 0
 mirror_mounts_m6_m:
-    x: 259.5
-    'y': -207.7
+    x: 267.2
+    'y': -206.7
     r: -0.0
     meta:
         stagger: 0
@@ -5398,8 +5398,8 @@ mirror_mounts_m6_m:
             - 0
         orient: 0
         shift:
-            - 80.5
-            - -64.7
+            - 72.8
+            - -63.7
         rotate: 0
         adjust: {}
         width: 18
@@ -5416,7 +5416,7 @@ mirror_mounts_m6_m:
                     key:
                         spread: 0
                         shift:
-                            - 49.5
+                            - 48.8
                             - 72.3
                     rows: {}
                     name: m1
@@ -5424,31 +5424,31 @@ mirror_mounts_m6_m:
                     key:
                         spread: 0
                         shift:
-                            - 69.5
-                            - 44.3
+                            - 68.8
+                            - 45.3
                     rows: {}
                     name: m2
                 m3:
                     key:
                         spread: 0
                         shift:
-                            - 32.5
-                            - -22.7
+                            - 24.8
+                            - -24.7
                     rows: {}
                     name: m3
                 m4:
                     key:
                         spread: 0
                         shift:
-                            - 82.5
-                            - -23.7
+                            - 58.8
+                            - -27.7
                     rows: {}
                     name: m4
                 m5:
                     key:
                         spread: 0
                         shift:
-                            - 35.5
+                            - 26.8
                             - -59.7
                     rows: {}
                     name: m5
@@ -5456,8 +5456,8 @@ mirror_mounts_m6_m:
                     key:
                         spread: 0
                         shift:
-                            - 80.5
-                            - -64.7
+                            - 72.8
+                            - -63.7
                     rows: {}
                     name: m6
             rows:
@@ -5467,8 +5467,8 @@ mirror_mounts_m6_m:
             key:
                 spread: 0
                 shift:
-                    - 80.5
-                    - -64.7
+                    - 72.8
+                    - -63.7
             rows: {}
             name: m6
         row: m
