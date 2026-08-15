@@ -74,7 +74,14 @@ units:
   #   index  ]-- all three level with each other, the baseline
   #   ring   ]
   #   middle    a bit higher
-  #   pinky     lowest
+  #   pinky     lowest, by a lot
+  #
+  # The pinky drop is deliberately large (12 mm below the baseline, 16 mm
+  # below middle). It has to be: the pinky column carries only three keys and
+  # skips the BOTTOM row, so its block sits in the upper three row positions.
+  # With a small stagger the column reads as sitting HIGHER than its
+  # neighbours even though each individual key is lower. 12 mm brings the
+  # whole block down to where a short finger actually rests.
   #
   # This is a deliberately flat profile. It is NOT the usual finger-length
   # stagger, where ring sits well forward of index; here ring drops back to
@@ -84,7 +91,7 @@ units:
   # to the running total, not measured from the origin. So below, every
   # column asks for `st_x - st_previous`. Edit these absolute values and the
   # deltas take care of themselves.
-  st_pinky: -6
+  st_pinky: -12
   st_ring: 0
   st_middle: 4
   st_index: 0
@@ -311,17 +318,17 @@ points:
         ref: matrix_pinky_home
       columns:
         m1:
-          key: {spread: 0, shift: [117.4, 47.7]}
+          key: {spread: 0, shift: [117.7, 53.7]}
         m2:
-          key: {spread: 0, shift: [3.4, 46.7]}
+          key: {spread: 0, shift: [3.7, 48.7]}
         m3:
-          key: {spread: 0, shift: [65.4, 33.7]}
+          key: {spread: 0, shift: [65.7, 39.7]}
         m4:
-          key: {spread: 0, shift: [117.4, -11.3]}
+          key: {spread: 0, shift: [117.7, -5.3]}
         m5:
-          key: {spread: 0, shift: [41.4, -19.3]}
+          key: {spread: 0, shift: [43.7, -13.3]}
         m6:
-          key: {spread: 0, shift: [92.4, -56.3]}
+          key: {spread: 0, shift: [92.7, -50.3]}
       rows:
         m:
 

@@ -13,39 +13,39 @@ models:
                             ShapeLine1_Bottom_Top:
                                 type: line
                                 origin:
-                                    - 350.7205628
-                                    - -160
+                                    - 347.1664079
+                                    - -166
                                 end:
-                                    - 352.25
-                                    - -160
+                                    - 349.75
+                                    - -166
                             ShapeLine2_Bottom_Top:
                                 type: line
                                 origin:
                                     - 352.25
-                                    - -160
+                                    - -163.5
                                 end:
                                     - 352.25
-                                    - -102.5
+                                    - -106
                             ShapeLine3_Bottom_Top:
                                 type: line
                                 origin:
-                                    - 349.75
-                                    - -100
+                                    - 352.25
+                                    - -106
                                 end:
-                                    - 347.1664079
-                                    - -100
+                                    - 350.7205628
+                                    - -106
                             ShapeLine3_Bottom_EndCap:
                                 type: arc
                                 origin:
-                                    - 347.1664079
-                                    - -82
+                                    - 350.7205628
+                                    - -88
                                 radius: 18
-                                startAngle: 225.0170422634985
+                                startAngle: 204.4962790583373
                                 endAngle: 270
                             ShapeLine3_Bottom_1_Top:
                                 type: line
                                 origin:
-                                    - 332.67503120000003
+                                    - 332.0658047
                                     - -94
                                 end:
                                     - 326.5637085
@@ -224,16 +224,16 @@ models:
                                     - 309.6829666
                                     - -172
                                 end:
-                                    - 332.0658047
+                                    - 332.67503120000003
                                     - -172
                             ShapeLine1_Bottom_StartCap:
                                 type: arc
                                 origin:
-                                    - 350.7205628
-                                    - -178
+                                    - 347.1664079
+                                    - -184
                                 radius: 18
                                 startAngle: 90
-                                endAngle: 155.5037209416627
+                                endAngle: 134.98295773650153
                         origin:
                             - 0
                             - 0
@@ -245,17 +245,17 @@ models:
                     fillet0:
                         origin:
                             - 349.75
-                            - -102.5
+                            - -163.5
                         radius: 2.5
-                        startAngle: 0
-                        endAngle: 90
+                        startAngle: 270
+                        endAngle: 0
                         type: arc
                     fillet1:
                         origin:
-                            - 332.67503120000003
+                            - 332.0658047
                             - -96.5
                         radius: 2.5
-                        startAngle: 45.0170422634985
+                        startAngle: 24.49627905833734
                         endAngle: 90
                         type: arc
                     fillet2:
@@ -340,11 +340,11 @@ models:
                         type: arc
                     fillet12:
                         origin:
-                            - 332.0658047
+                            - 332.67503120000003
                             - -169.5
                         radius: 2.5
                         startAngle: 270
-                        endAngle: 335.50372094166266
+                        endAngle: 314.98295773650153
                         type: arc
                 origin:
                     - 0

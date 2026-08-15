@@ -36,8 +36,15 @@ keys you press less often. The furthest is 42 mm from the thumb home key,
 inside the ~45 mm a relaxed thumb can sweep without the hand leaving position.
 
 Column stagger is deliberately flat: inner, index and ring all sit level with
-each other, middle is 4 mm further forward, and pinky drops 6 mm back. This is
-not the usual finger-length stagger — only the middle finger gets extra reach.
+each other, middle is 4 mm further forward, and pinky drops **12 mm** back.
+This is not the usual finger-length stagger — only the middle finger gets
+extra reach.
+
+The pinky drop is larger than it looks like it needs to be, on purpose. That
+column carries three keys and skips the *bottom* row, so its block occupies
+the upper three row positions. With a small stagger the column reads as
+sitting higher than its neighbours even though every individual key is lower;
+12 mm brings the whole block down to where a short finger actually rests.
 
 One consequence worth knowing: the reversible Choc hotswap footprint carries
 socket pads for *both* faces of the board and is ±9.58 mm wide, so two columns
