@@ -27,7 +27,7 @@ from check_matrix import parse, modules          # noqa: E402
 from check_outline import segments, WELD         # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
-PCB = ROOT / "build" / "pcbs" / "pinkyless46.kicad_pcb"
+PCB = ROOT / "build" / "pcbs" / "pinkyless48.kicad_pcb"
 
 # Copper must stay this far inside the board edge (JLCPCB minimum is 0.2 mm;
 # 0.3 gives room for milling tolerance).

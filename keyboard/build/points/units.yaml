@@ -11,9 +11,10 @@ $default_padding: 19
 $default_autobind: 10
 kx: 18
 ky: 17
+kx_inner: 19.8
 bleed: 6
-st_pinky: 0
-st_ring: 6
-st_middle: 9
-st_index: 4
-st_inner: -2
+st_pinky: -6
+st_ring: 0
+st_middle: 4
+st_index: 0
+st_inner: 0

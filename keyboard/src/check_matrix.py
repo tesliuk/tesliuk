@@ -26,7 +26,7 @@ from pathlib import Path
 import yaml
 
 ROOT = Path(__file__).resolve().parent.parent
-PCB = ROOT / "build" / "pcbs" / "pinkyless46.kicad_pcb"
+PCB = ROOT / "build" / "pcbs" / "pinkyless48.kicad_pcb"
 POINTS = ROOT / "build" / "points" / "points.yaml"
 
 

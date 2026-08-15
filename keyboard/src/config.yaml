@@ -1,19 +1,22 @@
 meta:
   engine: 4.1.0
-  name: pinkyless46
-  version: 0.5.0
+  name: pinkyless48
+  version: 1.0.0
   author: tesliuk
 
 # ---------------------------------------------------------------------------
-# pinkyless46 - a 46-key (23 per half) column-staggered split keyboard
+# pinkyless48 - a 48-key (24 per half) column-staggered split keyboard
 #
-#   * Kailh Choc v1 low-profile switches, 18.0 x 17.0 mm spacing
-#   * 4 rows x 5 columns, with the pinky column cut down to 2 keys
-#   * 5 thumb keys per half: a 3-key arc plus a 2-key island tucked below it
+#   * Kailh Choc v1 low-profile switches, 18 mm columns (19.8 for the inner
+#     column) x 17 mm rows
+#   * 4 rows x 5 columns; the pinky drops only the bottom row, so the number
+#     row keeps all five columns and carries 0-9 across the two halves
+#   * 5 thumb keys per half: a 3-key arc plus a 2-key island, starting where
+#     the finger matrix ends rather than tucked underneath it
 #   * Wired, QMK, RP2040 "Pro Micro" form-factor controller, TRRS between halves
 #   * Reversible: ONE pcb design, flipped over to make the right half
 #
-# Electrical matrix is 5 columns x 5 rows = 25 cells for 23 keys. The fifth
+# Electrical matrix is 5 columns x 5 rows = 25 cells for 24 keys. The fifth
 # row exists purely to give the five thumb keys somewhere to live; the finger
 # matrix only uses rows R1-R4.
 #
@@ -27,25 +30,46 @@ units:
   kx: 18
   ky: 17
 
+  # Column pitch for the INNER column only.
+  #
+  # The reversible Choc hotswap footprint carries socket pads for both faces
+  # of the board and is +/-9.58 mm wide - wider than the 18 mm column pitch.
+  # Two columns at the SAME vertical offset therefore short against each
+  # other unless they are >= 19.4 mm apart or >= 2.9 mm apart vertically.
+  #
+  # This stagger deliberately puts index and inner at identical height, so
+  # that one gap is opened to 19.8 mm. Every other gap stays at 18 mm,
+  # because every other neighbouring pair differs by 4 mm or more in height
+  # and clears on the vertical offset alone.
+  kx_inner: 19.8
+
   # How much board to leave around a key when building the outline.
   bleed: 6
 
   # --- Column stagger -----------------------------------------------------
-  # These are ABSOLUTE offsets from the pinky column, in mm.
-  # Positive = that column sits further AWAY from you (forward).
-  # They follow relative finger length: middle longest, pinky shortest. The
-  # inner column is pulled BACK because the index reaches inward and down,
-  # not inward and forward.
+  # ABSOLUTE offsets in mm, measured from the ring/index/inner baseline.
+  # Positive = that column sits further AWAY from you (forward/higher).
+  #
+  # Read across the left half from the inboard edge outwards:
+  #   inner  ]
+  #   index  ]-- all three level with each other, the baseline
+  #   ring   ]
+  #   middle    a bit higher
+  #   pinky     lowest
+  #
+  # This is a deliberately flat profile. It is NOT the usual finger-length
+  # stagger, where ring sits well forward of index; here ring drops back to
+  # the baseline and only the middle finger gets extra reach.
   #
   # NOTE: ergogen's `stagger` is CUMULATIVE - each column's stagger is added
   # to the running total, not measured from the origin. So below, every
   # column asks for `st_x - st_previous`. Edit these absolute values and the
   # deltas take care of themselves.
-  st_pinky: 0
-  st_ring: 6
-  st_middle: 9
-  st_index: 4
-  st_inner: -2
+  st_pinky: -6
+  st_ring: 0
+  st_middle: 4
+  st_index: 0
+  st_inner: 0
 
   # --- Thumb cluster ------------------------------------------------------
   # The cluster is positioned by explicit offsets from matrix_inner_bottom
@@ -65,10 +89,9 @@ points:
     # Rows are listed BOTTOM to TOP (an ergogen convention), so the order
     # below reads: bottom row, home row, top row, number row.
     #
-    # The pinky column skips 'bottom' and 'num', leaving it the two easiest
-    # keys - home and top. That is the "I don't like using pinkies"
-    # requirement. To give the pinky a third key, delete its
-    # `bottom.skip: true` line; the matrix has spare cells for it.
+    # The pinky column skips only 'bottom' - the position it reaches worst -
+    # keeping home, top and number. That is the "I don't like using pinkies"
+    # requirement, tempered by needing a full 10-key number row.
     # -------------------------------------------------------------------
     matrix:
       anchor:
@@ -79,8 +102,11 @@ points:
             stagger: st_pinky
             column_net: C1
           rows:
+            # The pinky keeps the number row - with all five columns present
+            # the number row carries 10 keys across both halves, which is
+            # exactly enough for 0-9. Only the bottom row is dropped, which
+            # is the position the pinky reaches worst.
             bottom.skip: true
-            num.skip: true
         ring:
           key:
             stagger: st_ring - st_pinky
@@ -95,6 +121,7 @@ points:
             column_net: C4
         inner:
           key:
+            spread: kx_inner      # see kx_inner - avoids a socket-pad short
             stagger: st_inner - st_index
             column_net: C5
       rows:
@@ -110,8 +137,8 @@ points:
     # -------------------------------------------------------------------
     # Thumb cluster - 5 keys, wired as row R5 across all five columns.
     #
-    #   t1 t2 t3   <- comfortable arc, thumb sweeps outward
-    #     t4 t5    <- stretch island, thumb curls down and inboard
+    #   t1 t2 t3   <- comfortable arc, thumb sweeps inboard and down
+    #     t4 t5    <- stretch island, tucked below the arc
     #
     # spread/padding are zeroed so every key is positioned by an explicit
     # shift from the zone anchor rather than by grid advance. Rotations
@@ -201,11 +228,28 @@ points:
     reset:
       anchor:
         ref: matrix_inner_num
-        shift: [-32, 27]
+        shift: [-4, 33]
       columns:
         reset:
       rows:
         reset:
+
+    # -------------------------------------------------------------------
+    # Web patch.
+    #
+    # t2/t3/t4/t5 surround a ~7 x 5 mm gap that their grown key pads do not
+    # quite close, which would come out as a hole in the middle of the thumb
+    # cluster. This is a point rather than an `adjust` shift so that the
+    # global mirror places it correctly on the right half too.
+    # -------------------------------------------------------------------
+    web:
+      anchor:
+        ref: matrix_inner_bottom
+        shift: [21.5, -38]
+      columns:
+        web:
+      rows:
+        web:
 
     # -------------------------------------------------------------------
     # M2 mounting holes.
@@ -225,17 +269,17 @@ points:
         ref: matrix_pinky_home
       columns:
         m1:
-          key: {spread: 0, shift: [49.1, 72.3]}
+          key: {spread: 0, shift: [57.0, 80.3]}
         m2:
-          key: {spread: 0, shift: [69.1, 44.3]}
+          key: {spread: 0, shift: [69.0, 54.3]}
         m3:
-          key: {spread: 0, shift: [109.1, -22.7]}
+          key: {spread: 0, shift: [64.0, 3.3]}
         m4:
-          key: {spread: 0, shift: [60.1, -24.7]}
+          key: {spread: 0, shift: [64.0, -19.7]}
         m5:
-          key: {spread: 0, shift: [64.1, -53.7]}
+          key: {spread: 0, shift: [105.0, -31.7]}
         m6:
-          key: {spread: 0, shift: [108.1, -64.7]}
+          key: {spread: 0, shift: [110.0, -56.7]}
       rows:
         m:
 
@@ -284,15 +328,8 @@ outlines:
     # this; a board house would either reject the file or ship fragments.
     # check_outline.py enforces that these bridges do their job.
     - what: rectangle
-      where: /^thumb_t[12]_thumb$/
-      adjust:
-        shift: [0, 12]
-      size: [kx + bleed + 10, 34]
-    - what: rectangle
-      where: /^thumb_t4_thumb$/
-      adjust:
-        shift: [4, 14]
-      size: [48, 36]
+      where: /^web_/
+      size: [26, 16]
     # Controller / jack / reset pad. These points carry rotation of their
     # own, so each rectangle is drawn in that point's frame.
     - what: rectangle
@@ -301,11 +338,13 @@ outlines:
     - what: rectangle
       where: /^trrs_/
       adjust:
-        shift: [0, -4]
-      size: [30, 36]
+        shift: [0, -3]
+      size: [16, 34]
     - what: rectangle
       where: /^reset_/
-      size: [16, 16]
+      adjust:
+        shift: [0, -8]
+      size: [14, 32]
 
   # M2 clearance holes, subtracted from the board.
   _screws:
@@ -334,26 +373,21 @@ outlines:
       where: /^(mirror_)?(matrix|thumb)_/
       size: [kx + bleed, ky + bleed]
     - what: rectangle
-      where: /^(mirror_)?thumb_t[12]_thumb$/
-      adjust:
-        shift: [0, 12]
-      size: [kx + bleed + 10, 34]
-    - what: rectangle
-      where: /^(mirror_)?thumb_t4_thumb$/
-      adjust:
-        shift: [4, 14]
-      size: [48, 36]
+      where: /^(mirror_)?web_/
+      size: [26, 16]
     - what: rectangle
       where: /^(mirror_)?mcu_/
       size: [40, 24]
     - what: rectangle
       where: /^(mirror_)?trrs_/
       adjust:
-        shift: [0, -4]
-      size: [30, 36]
+        shift: [0, -3]
+      size: [16, 34]
     - what: rectangle
       where: /^(mirror_)?reset_/
-      size: [16, 16]
+      adjust:
+        shift: [0, -8]
+      size: [14, 32]
 
   _screws_all:
     - what: circle
@@ -376,7 +410,7 @@ outlines:
       operation: stack
 
 pcbs:
-  pinkyless46:
+  pinkyless48:
     outlines:
       main:
         outline: board_left

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Generate printable STLs for the pinkyless46 case.
+Generate printable STLs for the pinkyless48 case.
 
 Reads the SAME geometry the PCB was built from - the board outline traced out
 of the generated DXF, and the key/mount positions from points.yaml - so the
@@ -46,7 +46,7 @@ from check_matrix import parse, modules             # noqa: E402
 
 OUT = ROOT / "build" / "case"
 POINTS = ROOT / "build" / "points" / "points.yaml"
-PCB = ROOT / "build" / "pcbs" / "pinkyless46.kicad_pcb"
+PCB = ROOT / "build" / "pcbs" / "pinkyless48.kicad_pcb"
 
 # ---- dimensions, millimetres ---------------------------------------------
 PLATE_T = 1.3        # Choc plate thickness; the latches expect 1.2-1.3

@@ -21,7 +21,7 @@ import yaml
 
 ROOT = Path(__file__).resolve().parent.parent
 POINTS = ROOT / "build" / "points" / "points.yaml"
-OUT = Path(__file__).resolve().parent / "pinkyless46" / "keyboard.json"
+OUT = Path(__file__).resolve().parent / "pinkyless48" / "keyboard.json"
 
 # Physical top-to-bottom order of the matrix rows.
 ROW_ORDER = ["R4", "R3", "R2", "R1", "R5"]
@@ -92,7 +92,7 @@ def main():
 
     data = {
         "manufacturer": "tesliuk",
-        "keyboard_name": "pinkyless46",
+        "keyboard_name": "pinkyless48",
         "maintainer": "tesliuk",
         "processor": "RP2040",
         "bootloader": "rp2040",

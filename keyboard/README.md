@@ -1,17 +1,17 @@
-# pinkyless46
+# pinkyless48
 
-A 46-key column-staggered split keyboard, designed around not using your
+A 48-key column-staggered split keyboard, designed around barely using your
 pinkies. Kailh Choc v1 low-profile, hotswap, wired, RP2040 + QMK.
 
 ![plate](build/case/plate_left.png)
 
 ## The layout
 
-23 keys per half:
+24 keys per half:
 
 ```
  pinky  ring   mid   idx  inner
-   ·      O     O     O     O                  number row
+   O      O     O     O     O                  number row
    O      O     O     O     O                  top row
    O      O     O     O     O                  home row
    ·      O     O     O     O                  bottom row
@@ -24,20 +24,28 @@ The thumb cluster starts where the finger matrix ends: the nearest thumb key
 sits directly below the innermost finger column, and the cluster runs inboard
 from there rather than being tucked back underneath the fingers.
 
-The pinky gets **two keys only** — top and home, the two it can reach without
-the hand moving. Everything a pinky normally carries (Z, Shift, Ctrl, Tab,
-Esc, Enter, Backspace) moved to the thumbs and to home-row mods.
+The pinky drops only the **bottom row**, the position it reaches worst. It
+keeps number, top and home. Because the number row therefore has all five
+columns, it carries a full `1234567890` across the two halves and digits need
+no layer. Z, Shift, Ctrl, Tab, Esc, Enter and Backspace — the rest of what a
+pinky normally carries — moved to the thumbs and to home-row mods.
 
 Five thumb keys per half, in two groups: a 3-key arc that follows the thumb's
 natural sweep inboard and down, and a 2-key island tucked below it for the
 keys you press less often. The furthest is 42 mm from the thumb home key,
 inside the ~45 mm a relaxed thumb can sweep without the hand leaving position.
 
-Column stagger follows finger length: middle furthest forward, then ring,
-index, pinky, and the inner column pulled *back* because the index reaches
-inward and down, not inward and forward.
+Column stagger is deliberately flat: inner, index and ring all sit level with
+each other, middle is 4 mm further forward, and pinky drops 6 mm back. This is
+not the usual finger-length stagger — only the middle finger gets extra reach.
 
-Board: **136 × 163 mm** per half. Case: **8.9 mm** tall before switches.
+One consequence worth knowing: the reversible Choc hotswap footprint carries
+socket pads for *both* faces of the board and is ±9.58 mm wide, so two columns
+at the *same* height short against each other at an 18 mm pitch. Index and
+inner are level, so that single gap is opened to **19.8 mm**. Every other gap
+stays at 18 mm, clearing on vertical offset alone.
+
+Board: **138 × 163 mm** per half. Case: **8.9 mm** tall before switches.
 The width comes from the thumb cluster reaching ~37 mm inboard of the matrix.
 
 ## What is in here
@@ -48,7 +56,7 @@ src/check_*.py         five verification passes, run by `make check`
 src/find_mounts.py     searches the board for valid screw positions
 case/gen_case.py       plate + tray STLs, generated from the same key positions
 firmware/gen_qmk.py    generates keyboard.json from the same key positions
-firmware/pinkyless46/  QMK keymap
+firmware/pinkyless48/  QMK keymap
 build/                 generated outputs (committed - they are the deliverable)
 docs/ORDERING.md       how to get it made with almost no soldering
 docs/PIN_MAPPING.md    controller pins, matrix cells, debugging a bad matrix
@@ -75,10 +83,12 @@ make           # build, check, case, firmware
 | `fit` | components or screws hanging off the board edge |
 | `shorts` | **pads on different nets overlapping**; copper clearance |
 
-These are not decoration. Building this design, they caught the thumb cluster
-coming out as four disconnected board fragments, and seven genuine short
+These are not decoration. Building this design they caught, among others: the
+thumb cluster coming out as four disconnected board fragments; seven short
 circuits where the controller and TRRS jack overlapped the number-row
-switches. Both would have produced dead boards at full cost.
+switches; and the socket-pad short between the two level columns that forced
+the 19.8 mm inner pitch. Every one would have produced a dead board at full
+cost.
 
 ## Before you order boards
 

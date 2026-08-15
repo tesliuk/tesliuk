@@ -30,7 +30,7 @@ from check_matrix import parse, modules      # noqa: E402
 from check_fit import board_polygon, pad_points   # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
-PCB = ROOT / "build" / "pcbs" / "pinkyless46.kicad_pcb"
+PCB = ROOT / "build" / "pcbs" / "pinkyless48.kicad_pcb"
 
 SWITCH_CUT = 13.8   # plate cutout - BIGGER than the switch pads, so a screw
                     # clear of every pad can still land in a switch hole
@@ -41,10 +41,21 @@ EDGE_MARGIN = 4.0   # keep the boss fully on the board
 GRID = 1.0          # search resolution, mm
 WANT = 6            # how many screws to place
 
-REF = (60.0, -143.0)   # matrix_pinky_home
+# The emitted shifts are relative to this anchor. It MUST be read from the
+# build rather than hardcoded: the anchor key moves whenever the column
+# stagger changes, and a stale constant silently offsets every screw hole.
+REF_KEY = "matrix_pinky_home"
+
+
+def reference_point():
+    raw = yaml.safe_load((ROOT / "build" / "points" / "points.yaml").read_text())
+    if REF_KEY not in raw:
+        raise SystemExit(f"error: {REF_KEY} not found in points.yaml")
+    return float(raw[REF_KEY]["x"]), float(raw[REF_KEY]["y"])
 
 
 def main():
+    ref = reference_point()
     board = board_polygon()
     tree = parse(PCB.read_text())
 
@@ -118,11 +129,11 @@ def main():
     print(f"placing {len(chosen)} mounting holes (M2, {HOLE_R*2:.1f} mm hole)\n")
     print("    mounts:")
     print("      anchor:")
-    print(f"        ref: matrix_pinky_home")
+    print(f"        ref: {REF_KEY}")
     print("      columns:")
     for i, (room, x, y) in enumerate(
             sorted(chosen, key=lambda c: (-c[2], c[1])), start=1):
-        dx, dy = x - REF[0], y - REF[1]
+        dx, dy = x - ref[0], y - ref[1]
         print(f"        m{i}:")
         print(f"          key:")
         print(f"            spread: 0")

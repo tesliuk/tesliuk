@@ -26,7 +26,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from check_matrix import parse, modules      # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
-PCB = ROOT / "build" / "pcbs" / "pinkyless46.kicad_pcb"
+PCB = ROOT / "build" / "pcbs" / "pinkyless48.kicad_pcb"
 
 MIN_GAP = 0.127     # JLCPCB standard minimum copper-to-copper spacing
 

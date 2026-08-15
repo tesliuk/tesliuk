@@ -6,7 +6,7 @@ physical positions as GPIO numbers.
 
 ## The matrix
 
-5 columns × 5 rows per half, 23 of the 25 cells used. `COL2ROW` diode
+5 columns × 5 rows per half, 24 of the 25 cells used. `COL2ROW` diode
 direction (diode cathode toward the row).
 
 | Net | Pro Micro pin | RP2040 GPIO | Carries |
@@ -49,13 +49,16 @@ Rows 0–4 are the left half, 5–9 the right. Columns 0–4 are C1–C5.
 | R1 bottom | *unused* | X | C | V | B |
 | R2 home   | A | S | D | F | G |
 | R3 top    | Q | W | E | R | T |
-| R4 number | *unused* | 1 | 2 | 3 | 4 |
+| R4 number | 1 | 2 | 3 | 4 | 5 |
 | R5 thumb  | t1 | t2 | t3 | t4 | t5 |
 
-The two unused cells are the pinky's bottom and number positions — exactly the
-keys the layout deliberately omits. If you later decide you do want a third
-pinky key, the cell is already there: delete the `bottom.skip: true` line under
-the pinky column in `src/config.yaml`, rebuild, and re-run `make check`.
+The single unused cell is the pinky's bottom position — the one key the layout
+deliberately omits. If you ever want it back, delete the `bottom.skip: true`
+line under the pinky column in `src/config.yaml`, rebuild, and re-run
+`make check`; the cell is already wired and waiting.
+
+Note that the number row uses all five columns, which is what lets the two
+halves cover `1234567890` without a layer.
 
 ## If every key reports in the wrong place
 
