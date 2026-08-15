@@ -1,7 +1,7 @@
 meta:
   engine: 4.1.0
   name: pinkyless46
-  version: 0.4.0
+  version: 0.5.0
   author: tesliuk
 
 # ---------------------------------------------------------------------------
@@ -48,10 +48,10 @@ units:
   st_inner: -2
 
   # --- Thumb cluster ------------------------------------------------------
-  # The cluster is positioned by explicit offsets from matrix_middle_bottom
+  # The cluster is positioned by explicit offsets from matrix_inner_bottom
   # (see the `thumb` zone below), so the geometry is directly readable
   # instead of emerging from chained rotations. t1-t3 are the comfortable
-  # arc; t4-t5 are the deliberate stretch island tucked below and inboard.
+  # arc; t4-t5 are the deliberate stretch island tucked below it.
 
 points:
   key:
@@ -117,46 +117,49 @@ points:
     # shift from the zone anchor rather than by grid advance. Rotations
     # follow the thumb's natural arc.
     #
-    # ANCHORING: the zone hangs off matrix_middle_bottom, and t1 has an
-    # x-shift of exactly 0. That is not incidental - it makes "the innermost
-    # thumb key sits directly below the middle column" a structural property
-    # of the config rather than a number that has to be maintained by hand.
-    # The middle column is the one with the largest stagger, i.e. the column
-    # that sits furthest forward. Re-stagger the matrix and the thumb cluster
-    # tracks it automatically.
+    # ANCHORING: the zone hangs off matrix_inner_bottom - the LAST (most
+    # inboard) finger column - and t1 has an x-shift of exactly 0. So the
+    # nearest thumb key sits directly below the innermost finger column, and
+    # the cluster extends inboard from there rather than being tucked back
+    # underneath the finger matrix. That is a structural property of the
+    # config, not a constant to maintain: add or remove a finger column and
+    # the cluster still starts where the matrix ends.
+    #
+    # The thumb reaches in and down from a pivot near the inner edge of the
+    # hand, so the arc descends as it travels inboard.
     # -------------------------------------------------------------------
     thumb:
       anchor:
-        ref: matrix_middle_bottom
+        ref: matrix_inner_bottom
       columns:
         t1:
           key:
             spread: 0
-            shift: [0, -29]
+            shift: [0, -18]
             rotate: -8
             column_net: C1
         t2:
           key:
             spread: 0
-            shift: [19, -35]
+            shift: [19, -24]
             rotate: -18
             column_net: C2
         t3:
           key:
             spread: 0
-            shift: [37, -43]
+            shift: [37, -32]
             rotate: -28
             column_net: C3
         t4:
           key:
             spread: 0
-            shift: [6, -56]
+            shift: [6, -45]
             rotate: -14
             column_net: C4
         t5:
           key:
             spread: 0
-            shift: [25, -63]
+            shift: [25, -52]
             rotate: -24
             column_net: C5
       rows:
@@ -222,17 +225,17 @@ points:
         ref: matrix_pinky_home
       columns:
         m1:
-          key: {spread: 0, shift: [48.8, 72.3]}
+          key: {spread: 0, shift: [49.1, 72.3]}
         m2:
-          key: {spread: 0, shift: [68.8, 45.3]}
+          key: {spread: 0, shift: [69.1, 44.3]}
         m3:
-          key: {spread: 0, shift: [24.8, -24.7]}
+          key: {spread: 0, shift: [109.1, -22.7]}
         m4:
-          key: {spread: 0, shift: [58.8, -27.7]}
+          key: {spread: 0, shift: [60.1, -24.7]}
         m5:
-          key: {spread: 0, shift: [26.8, -59.7]}
+          key: {spread: 0, shift: [64.1, -53.7]}
         m6:
-          key: {spread: 0, shift: [72.8, -63.7]}
+          key: {spread: 0, shift: [108.1, -64.7]}
       rows:
         m:
 

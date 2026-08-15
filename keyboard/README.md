@@ -11,29 +11,34 @@ pinkies. Kailh Choc v1 low-profile, hotswap, wired, RP2040 + QMK.
 
 ```
  pinky  ring   mid   idx  inner
-   ·      O     O     O     O      number row
-   O      O     O     O     O      top row
-   O      O     O     O     O      home row
-   ·      O     O     O     O      bottom row
+   ·      O     O     O     O                  number row
+   O      O     O     O     O                  top row
+   O      O     O     O     O                  home row
+   ·      O     O     O     O                  bottom row
 
-              O  O  O               thumb arc
-                O  O                thumb island
+                            O     O     O      thumb arc
+                               O     O         thumb island
 ```
+
+The thumb cluster starts where the finger matrix ends: the nearest thumb key
+sits directly below the innermost finger column, and the cluster runs inboard
+from there rather than being tucked back underneath the fingers.
 
 The pinky gets **two keys only** — top and home, the two it can reach without
 the hand moving. Everything a pinky normally carries (Z, Shift, Ctrl, Tab,
 Esc, Enter, Backspace) moved to the thumbs and to home-row mods.
 
 Five thumb keys per half, in two groups: a 3-key arc that follows the thumb's
-natural sweep, and a 2-key island tucked below and inboard for the keys you
-press less often. The furthest is 42 mm from the thumb home key, inside the
-~45 mm a relaxed thumb can sweep without the hand leaving position.
+natural sweep inboard and down, and a 2-key island tucked below it for the
+keys you press less often. The furthest is 42 mm from the thumb home key,
+inside the ~45 mm a relaxed thumb can sweep without the hand leaving position.
 
 Column stagger follows finger length: middle furthest forward, then ring,
 index, pinky, and the inner column pulled *back* because the index reaches
 inward and down, not inward and forward.
 
-Board: **107 × 163 mm** per half. Case: **8.9 mm** tall before switches.
+Board: **136 × 163 mm** per half. Case: **8.9 mm** tall before switches.
+The width comes from the thumb cluster reaching ~37 mm inboard of the matrix.
 
 ## What is in here
 
@@ -104,15 +109,16 @@ without any wall cutouts.
 ## Adjusting it
 
 The pinky rows, thumb positions and column stagger are all named values at the
-top of `src/config.yaml`. Two things worth knowing before you edit:
+top of `src/config.yaml`. Three things worth knowing before you edit:
 
 - Ergogen's `stagger` is **cumulative**, not absolute. The config works around
   this by writing each column as `st_this - st_previous`, so you can edit the
   absolute numbers and the deltas take care of themselves.
-- The thumb cluster is anchored to `matrix_middle_bottom` with t1 at an
-  x-shift of exactly 0, so the innermost thumb key stays aligned with the
-  middle column — the one that sits furthest forward. Re-stagger the matrix
-  and the cluster tracks it instead of drifting inboard.
+- The thumb cluster is anchored to `matrix_inner_bottom` with t1 at an
+  x-shift of exactly 0, so the nearest thumb key stays aligned with the last
+  finger column and the cluster always begins where the matrix ends. Add or
+  remove a finger column and the cluster follows. To slide the whole cluster,
+  change that one x-shift rather than editing all five.
 - After moving anything, run `make mounts` to re-derive screw positions and
   paste the result back into the `mounts` zone. Screw positions depend on the
   layout, and a screw that lands in a switch cutout leaves that switch with
