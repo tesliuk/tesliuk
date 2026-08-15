@@ -46,6 +46,11 @@ units:
   # How much board to leave around a key when building the outline.
   bleed: 6
 
+  # Radius for the morphological closing that fills concave pockets in the
+  # outline. Fills notches narrower than roughly 2*close; raise it to smooth
+  # the board further, lower it to keep more of the key-shaped silhouette.
+  close: 6
+
   # --- Column stagger -----------------------------------------------------
   # ABSOLUTE offsets in mm, measured from the ring/index/inner baseline.
   # Positive = that column sits further AWAY from you (forward/higher).
@@ -360,9 +365,31 @@ outlines:
       where: /^mounts_/
       radius: 1.1
 
-  board_left:
+  # Morphological closing: grow the blob by `close`, then shrink it back by
+  # the same amount. That fills every concave pocket narrower than ~2*close
+  # while leaving the board's overall L-shape untouched - a plain convex hull
+  # would swallow the whole empty region left of the thumb cluster and add
+  # ~40 cm2 of pointless board.
+  #
+  # The pockets between the thumb cluster, the controller area and the key
+  # pads are dead space anyway, and their sharp concave corners are stress
+  # risers in both 1.6 mm FR4 and the 1.3 mm printed plate. Filling all of
+  # them costs about 1.3% more board area and nothing in bounding box.
+  _blob_grown:
     - what: outline
       name: _blob_left
+      expand: close
+      joints: round
+
+  _blob_closed:
+    - what: outline
+      name: _blob_grown
+      expand: 0 - close
+      joints: round
+
+  board_left:
+    - what: outline
+      name: _blob_closed
       fillet: 2.5
     - operation: subtract
       what: outline
@@ -392,9 +419,21 @@ outlines:
       where: /^(mirror_)?mounts_/
       radius: 1.1
 
-  board:
+  _blob_all_grown:
     - what: outline
       name: _blob_all
+      expand: close
+      joints: round
+
+  _blob_all_closed:
+    - what: outline
+      name: _blob_all_grown
+      expand: 0 - close
+      joints: round
+
+  board:
+    - what: outline
+      name: _blob_all_closed
       fillet: 2.5
     - operation: subtract
       what: outline

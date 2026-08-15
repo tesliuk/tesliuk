@@ -19,552 +19,201 @@ models:
                                             - 0
                                     b:
                                         models:
-                                            a:
-                                                models:
-                                                    a:
-                                                        models:
-                                                            a:
-                                                                models:
-                                                                    a:
-                                                                        models:
-                                                                            a:
-                                                                                models:
-                                                                                    a:
-                                                                                        models:
-                                                                                            a:
-                                                                                                models:
-                                                                                                    a:
-                                                                                                        models:
-                                                                                                            a:
-                                                                                                                models:
-                                                                                                                    a:
-                                                                                                                        models:
-                                                                                                                            a:
-                                                                                                                                models:
-                                                                                                                                    a:
-                                                                                                                                        models:
-                                                                                                                                            a:
-                                                                                                                                                models:
-                                                                                                                                                    a:
-                                                                                                                                                        models:
-                                                                                                                                                            a:
-                                                                                                                                                                models:
-                                                                                                                                                                    a:
-                                                                                                                                                                        models:
-                                                                                                                                                                            a:
-                                                                                                                                                                                models:
-                                                                                                                                                                                    a:
-                                                                                                                                                                                        models:
-                                                                                                                                                                                            a:
-                                                                                                                                                                                                models:
-                                                                                                                                                                                                    a:
-                                                                                                                                                                                                        models:
-                                                                                                                                                                                                            a:
-                                                                                                                                                                                                                models:
-                                                                                                                                                                                                                    a:
-                                                                                                                                                                                                                        models:
-                                                                                                                                                                                                                            a:
-                                                                                                                                                                                                                                models:
-                                                                                                                                                                                                                                    a:
-                                                                                                                                                                                                                                        models:
-                                                                                                                                                                                                                                            a:
-                                                                                                                                                                                                                                                models:
-                                                                                                                                                                                                                                                    a:
-                                                                                                                                                                                                                                                        models: {}
-                                                                                                                                                                                                                                                        origin:
-                                                                                                                                                                                                                                                            - 0
-                                                                                                                                                                                                                                                            - 0
-                                                                                                                                                                                                                                                    b:
-                                                                                                                                                                                                                                                        paths:
-                                                                                                                                                                                                                                                            ShapeLine1:
-                                                                                                                                                                                                                                                                type: line
-                                                                                                                                                                                                                                                                origin:
-                                                                                                                                                                                                                                                                    - 50.5
-                                                                                                                                                                                                                                                                    - -160.5
-                                                                                                                                                                                                                                                                end:
-                                                                                                                                                                                                                                                                    - 63.5
-                                                                                                                                                                                                                                                                    - -160.5
-                                                                                                                                                                                                                                                            ShapeLine4:
-                                                                                                                                                                                                                                                                type: line
-                                                                                                                                                                                                                                                                origin:
-                                                                                                                                                                                                                                                                    - 48
-                                                                                                                                                                                                                                                                    - -158
-                                                                                                                                                                                                                                                                end:
-                                                                                                                                                                                                                                                                    - 48
-                                                                                                                                                                                                                                                                    - -106
-                                                                                                                                                                                                                                                        origin:
-                                                                                                                                                                                                                                                            - 0
-                                                                                                                                                                                                                                                            - 0
-                                                                                                                                                                                                                                                origin:
-                                                                                                                                                                                                                                                    - 0
-                                                                                                                                                                                                                                                    - 0
-                                                                                                                                                                                                                                            b:
-                                                                                                                                                                                                                                                paths: {}
-                                                                                                                                                                                                                                                origin:
-                                                                                                                                                                                                                                                    - 0
-                                                                                                                                                                                                                                                    - 0
-                                                                                                                                                                                                                                        origin:
-                                                                                                                                                                                                                                            - 0
-                                                                                                                                                                                                                                            - 0
-                                                                                                                                                                                                                                    b:
-                                                                                                                                                                                                                                        paths:
-                                                                                                                                                                                                                                            ShapeLine3:
-                                                                                                                                                                                                                                                type: line
-                                                                                                                                                                                                                                                origin:
-                                                                                                                                                                                                                                                    - 63.5
-                                                                                                                                                                                                                                                    - -103.5
-                                                                                                                                                                                                                                                end:
-                                                                                                                                                                                                                                                    - 50.5
-                                                                                                                                                                                                                                                    - -103.5
-                                                                                                                                                                                                                                        origin:
-                                                                                                                                                                                                                                            - 0
-                                                                                                                                                                                                                                            - 0
-                                                                                                                                                                                                                                origin:
-                                                                                                                                                                                                                                    - 0
-                                                                                                                                                                                                                                    - 0
-                                                                                                                                                                                                                            b:
-                                                                                                                                                                                                                                paths:
-                                                                                                                                                                                                                                    ShapeLine1:
-                                                                                                                                                                                                                                        type: line
-                                                                                                                                                                                                                                        origin:
-                                                                                                                                                                                                                                            - 68.5
-                                                                                                                                                                                                                                            - -171.5
-                                                                                                                                                                                                                                        end:
-                                                                                                                                                                                                                                            - 87.5
-                                                                                                                                                                                                                                            - -171.5
-                                                                                                                                                                                                                                    ShapeLine2:
-                                                                                                                                                                                                                                        type: line
-                                                                                                                                                                                                                                        origin:
-                                                                                                                                                                                                                                            - 90
-                                                                                                                                                                                                                                            - -169
-                                                                                                                                                                                                                                        end:
-                                                                                                                                                                                                                                            - 90
-                                                                                                                                                                                                                                            - -167.5
-                                                                                                                                                                                                                                    ShapeLine4:
-                                                                                                                                                                                                                                        type: line
-                                                                                                                                                                                                                                        origin:
-                                                                                                                                                                                                                                            - 66
-                                                                                                                                                                                                                                            - -163
-                                                                                                                                                                                                                                        end:
-                                                                                                                                                                                                                                            - 66
-                                                                                                                                                                                                                                            - -169
-                                                                                                                                                                                                                                origin:
-                                                                                                                                                                                                                                    - 0
-                                                                                                                                                                                                                                    - 0
-                                                                                                                                                                                                                        origin:
-                                                                                                                                                                                                                            - 0
-                                                                                                                                                                                                                            - 0
-                                                                                                                                                                                                                    b:
-                                                                                                                                                                                                                        paths: {}
-                                                                                                                                                                                                                        origin:
-                                                                                                                                                                                                                            - 0
-                                                                                                                                                                                                                            - 0
-                                                                                                                                                                                                                origin:
-                                                                                                                                                                                                                    - 0
-                                                                                                                                                                                                                    - 0
-                                                                                                                                                                                                            b:
-                                                                                                                                                                                                                paths: {}
-                                                                                                                                                                                                                origin:
-                                                                                                                                                                                                                    - 0
-                                                                                                                                                                                                                    - 0
-                                                                                                                                                                                                        origin:
-                                                                                                                                                                                                            - 0
-                                                                                                                                                                                                            - 0
-                                                                                                                                                                                                    b:
-                                                                                                                                                                                                        paths:
-                                                                                                                                                                                                            ShapeLine3:
-                                                                                                                                                                                                                type: line
-                                                                                                                                                                                                                origin:
-                                                                                                                                                                                                                    - 84
-                                                                                                                                                                                                                    - -97.5
-                                                                                                                                                                                                                end:
-                                                                                                                                                                                                                    - 68.5
-                                                                                                                                                                                                                    - -97.5
-                                                                                                                                                                                                            ShapeLine4:
-                                                                                                                                                                                                                type: line
-                                                                                                                                                                                                                origin:
-                                                                                                                                                                                                                    - 66
-                                                                                                                                                                                                                    - -100
-                                                                                                                                                                                                                end:
-                                                                                                                                                                                                                    - 66
-                                                                                                                                                                                                                    - -101
-                                                                                                                                                                                                        origin:
-                                                                                                                                                                                                            - 0
-                                                                                                                                                                                                            - 0
-                                                                                                                                                                                                origin:
-                                                                                                                                                                                                    - 0
-                                                                                                                                                                                                    - 0
-                                                                                                                                                                                            b:
-                                                                                                                                                                                                paths:
-                                                                                                                                                                                                    ShapeLine1:
-                                                                                                                                                                                                        type: line
-                                                                                                                                                                                                        origin:
-                                                                                                                                                                                                            - 90
-                                                                                                                                                                                                            - -167.5
-                                                                                                                                                                                                        end:
-                                                                                                                                                                                                            - 99.5
-                                                                                                                                                                                                            - -167.5
-                                                                                                                                                                                                origin:
-                                                                                                                                                                                                    - 0
-                                                                                                                                                                                                    - 0
-                                                                                                                                                                                        origin:
-                                                                                                                                                                                            - 0
-                                                                                                                                                                                            - 0
-                                                                                                                                                                                    b:
-                                                                                                                                                                                        paths: {}
-                                                                                                                                                                                        origin:
-                                                                                                                                                                                            - 0
-                                                                                                                                                                                            - 0
-                                                                                                                                                                                origin:
-                                                                                                                                                                                    - 0
-                                                                                                                                                                                    - 0
-                                                                                                                                                                            b:
-                                                                                                                                                                                paths: {}
-                                                                                                                                                                                origin:
-                                                                                                                                                                                    - 0
-                                                                                                                                                                                    - 0
-                                                                                                                                                                        origin:
-                                                                                                                                                                            - 0
-                                                                                                                                                                            - 0
-                                                                                                                                                                    b:
-                                                                                                                                                                        paths:
-                                                                                                                                                                            ShapeLine2:
-                                                                                                                                                                                type: line
-                                                                                                                                                                                origin:
-                                                                                                                                                                                    - 108
-                                                                                                                                                                                    - -95
-                                                                                                                                                                                end:
-                                                                                                                                                                                    - 108
-                                                                                                                                                                                    - -93.5
-                                                                                                                                                                            ShapeLine3:
-                                                                                                                                                                                type: line
-                                                                                                                                                                                origin:
-                                                                                                                                                                                    - 108
-                                                                                                                                                                                    - -93.5
-                                                                                                                                                                                end:
-                                                                                                                                                                                    - 86.5
-                                                                                                                                                                                    - -93.5
-                                                                                                                                                                            ShapeLine4:
-                                                                                                                                                                                type: line
-                                                                                                                                                                                origin:
-                                                                                                                                                                                    - 84
-                                                                                                                                                                                    - -96
-                                                                                                                                                                                end:
-                                                                                                                                                                                    - 84
-                                                                                                                                                                                    - -97.5
-                                                                                                                                                                        origin:
-                                                                                                                                                                            - 0
-                                                                                                                                                                            - 0
-                                                                                                                                                                origin:
-                                                                                                                                                                    - 0
-                                                                                                                                                                    - 0
-                                                                                                                                                            b:
-                                                                                                                                                                paths:
-                                                                                                                                                                    ShapeLine1:
-                                                                                                                                                                        type: line
-                                                                                                                                                                        origin:
-                                                                                                                                                                            - 102
-                                                                                                                                                                            - -171.5
-                                                                                                                                                                        end:
-                                                                                                                                                                            - 119.71966349087268
-                                                                                                                                                                            - -171.5
-                                                                                                                                                                    ShapeLine4:
-                                                                                                                                                                        type: line
-                                                                                                                                                                        origin:
-                                                                                                                                                                            - 102
-                                                                                                                                                                            - -170
-                                                                                                                                                                        end:
-                                                                                                                                                                            - 102
-                                                                                                                                                                            - -171.5
-                                                                                                                                                                origin:
-                                                                                                                                                                    - 0
-                                                                                                                                                                    - 0
-                                                                                                                                                        origin:
-                                                                                                                                                            - 0
-                                                                                                                                                            - 0
-                                                                                                                                                    b:
-                                                                                                                                                        paths: {}
-                                                                                                                                                        origin:
-                                                                                                                                                            - 0
-                                                                                                                                                            - 0
-                                                                                                                                                origin:
-                                                                                                                                                    - 0
-                                                                                                                                                    - 0
-                                                                                                                                            b:
-                                                                                                                                                paths: {}
-                                                                                                                                                origin:
-                                                                                                                                                    - 0
-                                                                                                                                                    - 0
-                                                                                                                                        origin:
-                                                                                                                                            - 0
-                                                                                                                                            - 0
-                                                                                                                                    b:
-                                                                                                                                        paths:
-                                                                                                                                            ShapeLine3:
-                                                                                                                                                type: line
-                                                                                                                                                origin:
-                                                                                                                                                    - 110.5
-                                                                                                                                                    - -97.5
-                                                                                                                                                end:
-                                                                                                                                                    - 145.8
-                                                                                                                                                    - -97.5
-                                                                                                                                        origin:
-                                                                                                                                            - 0
-                                                                                                                                            - 0
-                                                                                                                                origin:
-                                                                                                                                    - 0
-                                                                                                                                    - 0
-                                                                                                                            b:
-                                                                                                                                paths:
-                                                                                                                                    ShapeLine2:
-                                                                                                                                        type: line
-                                                                                                                                        origin:
-                                                                                                                                            - 145.8
-                                                                                                                                            - -168.07347291137472
-                                                                                                                                        end:
-                                                                                                                                            - 145.8
-                                                                                                                                            - -164.5
-                                                                                                                                origin:
-                                                                                                                                    - 0
-                                                                                                                                    - 0
-                                                                                                                        origin:
-                                                                                                                            - 0
-                                                                                                                            - 0
-                                                                                                                    b:
-                                                                                                                        paths: {}
-                                                                                                                        origin:
-                                                                                                                            - 0
-                                                                                                                            - 0
-                                                                                                                origin:
-                                                                                                                    - 0
-                                                                                                                    - 0
-                                                                                                            b:
-                                                                                                                paths: {}
-                                                                                                                origin:
-                                                                                                                    - 0
-                                                                                                                    - 0
-                                                                                                        origin:
-                                                                                                            - 0
-                                                                                                            - 0
-                                                                                                    b:
-                                                                                                        paths:
-                                                                                                            ShapeLine2:
-                                                                                                                type: line
-                                                                                                                origin:
-                                                                                                                    - 145.8
-                                                                                                                    - -98
-                                                                                                                end:
-                                                                                                                    - 145.8
-                                                                                                                    - -97.5
-                                                                                                        origin:
-                                                                                                            - 0
-                                                                                                            - 0
-                                                                                                origin:
-                                                                                                    - 0
-                                                                                                    - 0
-                                                                                            b:
-                                                                                                paths:
-                                                                                                    ShapeLine1:
-                                                                                                        type: line
-                                                                                                        origin:
-                                                                                                            - 122.79196270315141
-                                                                                                            - -188.06593835366363
-                                                                                                        end:
-                                                                                                            - 138.15959487273042
-                                                                                                            - -190.2257181867145
-                                                                                                    ShapeLine2:
-                                                                                                        type: line
-                                                                                                        origin:
-                                                                                                            - 147.03723349786688
-                                                                                                            - -170.03574806568986
-                                                                                                        end:
-                                                                                                            - 147.28370750000002
-                                                                                                            - -168.2819944
-                                                                                                    ShapeLine3:
-                                                                                                        type: line
-                                                                                                        origin:
-                                                                                                            - 147.28370750000002
-                                                                                                            - -168.2819944
-                                                                                                        end:
-                                                                                                            - 145.8
-                                                                                                            - -168.07347291137472
-                                                                                                    ShapeLine4:
-                                                                                                        type: line
-                                                                                                        origin:
-                                                                                                            - 122.19533368495021
-                                                                                                            - -174.34793274214064
-                                                                                                        end:
-                                                                                                            - 120.66422525121446
-                                                                                                            - -185.2423354174457
-                                                                                                origin:
-                                                                                                    - 0
-                                                                                                    - 0
-                                                                                        origin:
-                                                                                            - 0
-                                                                                            - 0
-                                                                                    b:
-                                                                                        paths:
-                                                                                            ShapeLine1:
-                                                                                                type: line
-                                                                                                origin:
-                                                                                                    - 137.8336264
-                                                                                                    - -191.228946
-                                                                                                end:
-                                                                                                    - 142.3
-                                                                                                    - -192.6801587596567
-                                                                                            ShapeLine2:
-                                                                                                type: line
-                                                                                                origin:
-                                                                                                    - 167.6025281564049
-                                                                                                    - -177.27531842998576
-                                                                                                end:
-                                                                                                    - 167.7663736
-                                                                                                    - -176.771054
-                                                                                            ShapeLine3:
-                                                                                                type: line
-                                                                                                origin:
-                                                                                                    - 167.7663736
-                                                                                                    - -176.771054
-                                                                                                end:
-                                                                                                    - 147.03723349786688
-                                                                                                    - -170.03574806568975
-                                                                                            ShapeLine4:
-                                                                                                type: line
-                                                                                                origin:
-                                                                                                    - 138.15959487273042
-                                                                                                    - -190.22571818671446
-                                                                                                end:
-                                                                                                    - 137.8336264
-                                                                                                    - -191.228946
-                                                                                        origin:
-                                                                                            - 0
-                                                                                            - 0
-                                                                                origin:
-                                                                                    - 0
-                                                                                    - 0
-                                                                            b:
-                                                                                paths:
-                                                                                    ShapeLine1_1:
-                                                                                        type: line
-                                                                                        origin:
-                                                                                            - 174.2294433240529
-                                                                                            - -206.8480229941415
-                                                                                        end:
-                                                                                            - 175.9964481
-                                                                                            - -207.7875561
-                                                                                    ShapeLine2:
-                                                                                        type: line
-                                                                                        origin:
-                                                                                            - 175.9964481
-                                                                                            - -207.7875561
-                                                                                        end:
-                                                                                            - 185.6206151510563
-                                                                                            - -189.6871304566489
-                                                                                    ShapeLine3:
-                                                                                        type: line
-                                                                                        origin:
-                                                                                            - 184.58692517046782
-                                                                                            - -186.30608252014113
-                                                                                        end:
-                                                                                            - 167.6025281564049
-                                                                                            - -177.27531842998582
-                                                                                origin:
-                                                                                    - 0
-                                                                                    - 0
-                                                                        origin:
-                                                                            - 0
-                                                                            - 0
-                                                                    b:
-                                                                        paths:
-                                                                            ShapeLine1:
-                                                                                type: line
-                                                                                origin:
-                                                                                    - 127.80008876589771
-                                                                                    - -213.86014282796407
-                                                                                end:
-                                                                                    - 143.27885291448658
-                                                                                    - -217.7194321884151
-                                                                            ShapeLine3:
-                                                                                type: line
-                                                                                origin:
-                                                                                    - 142.3
-                                                                                    - -193.77126327144714
-                                                                                end:
-                                                                                    - 133.36429241698224
-                                                                                    - -191.54334114070087
-                                                                            ShapeLine4:
-                                                                                type: line
-                                                                                origin:
-                                                                                    - 130.3337483728348
-                                                                                    - -193.3642756672274
-                                                                                end:
-                                                                                    - 125.97915423937125
-                                                                                    - -210.82959878381672
-                                                                        origin:
-                                                                            - 0
-                                                                            - 0
-                                                                origin:
-                                                                    - 0
-                                                                    - 0
-                                                            b:
-                                                                paths:
-                                                                    ShapeLine1:
-                                                                        type: line
-                                                                        origin:
-                                                                            - 143.6908896164837
-                                                                            - -217.86130781177957
-                                                                        end:
-                                                                            - 162.8012106289383
-                                                                            - -226.36977096323
-                                                                    ShapeLine2:
-                                                                        type: line
-                                                                        origin:
-                                                                            - 166.10191575171834
-                                                                            - -225.10274876206518
-                                                                        end:
-                                                                            - 174.2294433240529
-                                                                            - -206.8480229941415
-                                                                origin:
-                                                                    - 0
-                                                                    - 0
-                                                        origin:
-                                                            - 0
-                                                            - 0
-                                                    b:
-                                                        paths:
-                                                            ShapeLine4:
-                                                                type: line
-                                                                origin:
-                                                                    - 142.3
-                                                                    - -192.6801587596567
-                                                                end:
-                                                                    - 142.3
-                                                                    - -193.77126327144714
-                                                        origin:
-                                                            - 0
-                                                            - 0
-                                                origin:
-                                                    - 0
-                                                    - 0
-                                            b:
+                                            '0':
                                                 paths:
-                                                    ShapeLine1:
+                                                    ShapeLine1_Bottom_Top:
                                                         type: line
                                                         origin:
-                                                            - 178.3
-                                                            - -98
+                                                            - 50.5
+                                                            - -160.5
                                                         end:
-                                                            - 145.8
-                                                            - -98
-                                                    ShapeLine3:
+                                                            - 60
+                                                            - -160.5
+                                                    ShapeLine1_Bottom_EndCap:
+                                                        type: arc
+                                                        origin:
+                                                            - 60
+                                                            - -166.5
+                                                        radius: 6
+                                                        startAngle: 360
+                                                        endAngle: 90
+                                                    ShapeLine4_Bottom_Top:
                                                         type: line
                                                         origin:
-                                                            - 148.3
+                                                            - 66
+                                                            - -166.5
+                                                        end:
+                                                            - 66
+                                                            - -169
+                                                    ShapeLine1_Bottom_1_Top:
+                                                        type: line
+                                                        origin:
+                                                            - 68.5
+                                                            - -171.5
+                                                        end:
+                                                            - 88.44575180000001
+                                                            - -171.5
+                                                    ShapeLine1_EndCap_EndCap:
+                                                        type: arc
+                                                        origin:
+                                                            - 95.6568543
+                                                            - -173.5
+                                                        radius: 6
+                                                        startAngle: 450
+                                                        endAngle: 148.03428106746168
+                                                    ShapeLine1_Bottom_2_Top:
+                                                        type: line
+                                                        origin:
+                                                            - 95.6568543
+                                                            - -167.5
+                                                        end:
+                                                            - 96.3431457
+                                                            - -167.5
+                                                    ShapeLine1_Bottom_2_EndCap:
+                                                        type: arc
+                                                        origin:
+                                                            - 96.3431457
+                                                            - -173.5
+                                                        radius: 6
+                                                        startAngle: 31.965718932538312
+                                                        endAngle: 90
+                                                    ShapeLine1_Bottom_3_Top:
+                                                        type: line
+                                                        origin:
+                                                            - 103.55424819999999
+                                                            - -171.5
+                                                        end:
+                                                            - 115.69337411518738
+                                                            - -171.5
+                                                    ShapeLine1_Bottom_3_EndCap:
+                                                        type: arc
+                                                        origin:
+                                                            - 115.69337411518738
+                                                            - -177.5
+                                                        radius: 6
+                                                        startAngle: 352.0000007725294
+                                                        endAngle: 90
+                                                    ShapeLine4_Bottom_1_Top:
+                                                        type: line
+                                                        origin:
+                                                            - 121.63498252304677
+                                                            - -178.33503854407752
+                                                        end:
+                                                            - 120.66422526525702
+                                                            - -185.24233541813567
+                                                    ShapeLine1_Bottom_4_Top:
+                                                        type: line
+                                                        origin:
+                                                            - 122.79196271525706
+                                                            - -188.06593836813573
+                                                        end:
+                                                            - 124.75590170000001
+                                                            - -188.341952
+                                                    ShapeLine1_Bottom_4_EndCap:
+                                                        type: arc
+                                                        origin:
+                                                            - 123.92086310000002
+                                                            - -194.2835604
+                                                        radius: 6
+                                                        startAngle: 345.9999999903762
+                                                        endAngle: 81.99999993655985
+                                                    ShapeLine4_Bottom_2_Top:
+                                                        type: line
+                                                        origin:
+                                                            - 129.74263752333943
+                                                            - -195.7350917910134
+                                                        end:
+                                                            - 125.97915417358317
+                                                            - -210.82959877503725
+                                                    ShapeLine1_Bottom_5_Top:
+                                                        type: line
+                                                        origin:
+                                                            - 127.80008870010967
+                                                            - -213.8601428191845
+                                                        end:
+                                                            - 142.9817385
+                                                            - -217.6453533
+                                                    ShapeLine1_Bottom_5_EndCap:
+                                                        type: arc
+                                                        origin:
+                                                            - 141.5302071
+                                                            - -223.4671276
+                                                        radius: 6
+                                                        startAngle: 425.99999911380985
+                                                        endAngle: 76.0000000306478
+                                                    ShapeLine1_Bottom_6_Top:
+                                                        type: line
+                                                        origin:
+                                                            - 143.97062702578563
+                                                            - -217.9858549310783
+                                                        end:
+                                                            - 162.801210656104
+                                                            - -226.3697709035734
+                                                    ShapeLine2_Bottom_Top:
+                                                        type: line
+                                                        origin:
+                                                            - 166.10191577888406
+                                                            - -225.10274870240852
+                                                        end:
+                                                            - 172.35499850000002
+                                                            - -211.058095
+                                                    ShapeLine2_Bottom_EndCap:
+                                                        type: arc
+                                                        origin:
+                                                            - 177.83627120000003
+                                                            - -213.4985149
+                                                        radius: 6
+                                                        startAngle: 115.19306247386041
+                                                        endAngle: 155.99999987735086
+                                                    ShapeLine2_Bottom_1_Top:
+                                                        type: line
+                                                        origin:
+                                                            - 176.4254474073255
+                                                            - -206.980725750724
+                                                        end:
+                                                            - 185.62061515234535
+                                                            - -189.6871304542246
+                                                    ShapeLine3_Bottom_Top:
+                                                        type: line
+                                                        origin:
+                                                            - 184.5869251717568
+                                                            - -186.30608251771685
+                                                        end:
+                                                            - 169.68279152204036
+                                                            - -178.38141405854813
+                                                    ShapeLine3_Bottom_EndCap:
+                                                        type: arc
+                                                        origin:
+                                                            - 172.499621
+                                                            - -173.0837285
+                                                        radius: 6
+                                                        startAngle: 223.49383333984164
+                                                        endAngle: 241.9999997548599
+                                                    ShapeLine3_Bottom_1_Top:
+                                                        type: line
+                                                        origin:
+                                                            - 167.10585164694376
+                                                            - -176.556437405522
+                                                        end:
+                                                            - 158.33415099485453
+                                                            - -173.70633906583615
+                                                    ShapeLine3_Bottom_1_EndCap:
+                                                        type: arc
+                                                        origin:
+                                                            - 160.18825300000003
+                                                            - -167.99999999999997
+                                                        radius: 6
+                                                        startAngle: 89.99999980589898
+                                                        endAngle: 251.99999965790443
+                                                    ShapeLine3_Bottom_2_Top:
+                                                        type: line
+                                                        origin:
+                                                            - 160.18825302032624
                                                             - -162
                                                         end:
                                                             - 178.3
                                                             - -162
-                                                    ShapeLine4:
+                                                    ShapeLine4_Bottom_3_Top:
                                                         type: line
                                                         origin:
                                                             - 180.8
@@ -572,6 +221,86 @@ models:
                                                         end:
                                                             - 180.8
                                                             - -100.5
+                                                    ShapeLine1_Bottom_7_Top:
+                                                        type: line
+                                                        origin:
+                                                            - 178.3
+                                                            - -98
+                                                        end:
+                                                            - 148.1979158
+                                                            - -98
+                                                    ShapeLine1_Bottom_7_EndCap:
+                                                        type: arc
+                                                        origin:
+                                                            - 148.1979158
+                                                            - -92
+                                                        radius: 6
+                                                        startAngle: 246.44353535525698
+                                                        endAngle: 270
+                                                    ShapeLine3_Top_Bottom:
+                                                        type: line
+                                                        origin:
+                                                            - 113.6568543
+                                                            - -97.5
+                                                        end:
+                                                            - 145.8
+                                                            - -97.5
+                                                    ShapeLine3_Top_StartCap:
+                                                        type: arc
+                                                        origin:
+                                                            - 113.6568543
+                                                            - -91.5
+                                                        radius: 6
+                                                        startAngle: 211.9657189325383
+                                                        endAngle: 270
+                                                    ShapeLine3_Bottom_3_Top:
+                                                        type: line
+                                                        origin:
+                                                            - 106.44575180000001
+                                                            - -93.5
+                                                        end:
+                                                            - 85.55424819999999
+                                                            - -93.5
+                                                    ShapeLine3_EndCap_2_EndCap:
+                                                        type: arc
+                                                        origin:
+                                                            - 78.3431457
+                                                            - -91.5
+                                                        radius: 6
+                                                        startAngle: 270
+                                                        endAngle: 328.0342810674616
+                                                    ShapeLine3_Bottom_4_Top:
+                                                        type: line
+                                                        origin:
+                                                            - 78.3431457
+                                                            - -97.5
+                                                        end:
+                                                            - 68.1240384
+                                                            - -97.5
+                                                    ShapeLine3_EndCap_3_EndCap:
+                                                        type: arc
+                                                        origin:
+                                                            - 60
+                                                            - -97.5
+                                                        radius: 6
+                                                        startAngle: 270
+                                                        endAngle: 342.8953648141652
+                                                    ShapeLine3_Bottom_5_Top:
+                                                        type: line
+                                                        origin:
+                                                            - 60
+                                                            - -103.5
+                                                        end:
+                                                            - 50.5
+                                                            - -103.5
+                                                    ShapeLine4_Top_Bottom:
+                                                        type: line
+                                                        origin:
+                                                            - 48
+                                                            - -158
+                                                        end:
+                                                            - 48
+                                                            - -106
                                                 origin:
                                                     - 0
                                                     - 0
@@ -582,99 +311,99 @@ models:
                                         paths:
                                             fillet0:
                                                 origin:
-                                                    - 63.5
-                                                    - -163
-                                                radius: 2.5
-                                                startAngle: 0
-                                                endAngle: 90
-                                                type: arc
-                                            fillet1:
-                                                origin:
                                                     - 68.5
                                                     - -169
                                                 radius: 2.5
                                                 startAngle: 180
                                                 endAngle: 270
                                                 type: arc
-                                            fillet2:
+                                            fillet1:
                                                 origin:
-                                                    - 87.5
+                                                    - 88.44575180000001
                                                     - -169
                                                 radius: 2.5
                                                 startAngle: 270
-                                                endAngle: 0
+                                                endAngle: 328.0342810674617
+                                                type: arc
+                                            fillet2:
+                                                origin:
+                                                    - 103.55424819999999
+                                                    - -169
+                                                radius: 2.5
+                                                startAngle: 211.96571893253832
+                                                endAngle: 270
                                                 type: arc
                                             fillet3:
                                                 origin:
-                                                    - 99.5
-                                                    - -170
+                                                    - 119.15931231518738
+                                                    - -177.9871058
                                                 radius: 2.5
-                                                startAngle: 0
-                                                endAngle: 90
+                                                startAngle: 352.0000003037281
+                                                endAngle: 352.0000007725294
                                                 type: arc
                                             fillet4:
                                                 origin:
-                                                    - 119.71966349087268
-                                                    - -174
+                                                    - 123.13989545933454
+                                                    - -185.5902681602763
                                                 radius: 2.5
-                                                startAngle: 352.00000030372735
-                                                endAngle: 90
+                                                startAngle: 172.00000030372726
+                                                endAngle: 262.0000003037291
                                                 type: arc
                                             fillet5:
                                                 origin:
-                                                    - 123.139895445292
-                                                    - -185.59026815958623
+                                                    - 128.4048934589201
+                                                    - -211.43440353384767
                                                 radius: 2.5
-                                                startAngle: 172.0000003037299
-                                                endAngle: 262.0000003037282
+                                                startAngle: 165.99999939115582
+                                                endAngle: 255.99999939115486
                                                 type: arc
                                             fillet6:
                                                 origin:
-                                                    - 132.75948765817176
-                                                    - -193.96908042603778
+                                                    - 163.8180521169116
+                                                    - -224.08590724160095
                                                 radius: 2.5
-                                                startAngle: 75.99999939115439
-                                                endAngle: 165.99999939115662
+                                                startAngle: 246.00000324179592
+                                                endAngle: 336.00000324179683
                                                 type: arc
                                             fillet7:
                                                 origin:
-                                                    - 128.4048935247082
-                                                    - -211.43440354262714
+                                                    - 174.21807850000002
+                                                    - -205.8070468
                                                 radius: 2.5
-                                                startAngle: 165.99999939115588
-                                                endAngle: 255.99999939115423
+                                                startAngle: 295.19306247386044
+                                                endAngle: 331.9999983094566
                                                 type: arc
                                             fillet8:
                                                 origin:
-                                                    - 142.67404815567613
-                                                    - -220.14517147375204
+                                                    - 183.41324619379716
+                                                    - -188.513451476265
                                                 radius: 2.5
-                                                startAngle: 66.00000324179679
-                                                endAngle: 75.99999939115517
+                                                startAngle: 331.99999830945694
+                                                endAngle: 61.99999830945545
                                                 type: arc
                                             fillet9:
                                                 origin:
-                                                    - 163.8180520897459
-                                                    - -224.08590730125758
+                                                    - 170.8564705
+                                                    - -176.1740451
                                                 radius: 2.5
-                                                startAngle: 246.00000324179564
-                                                endAngle: 336.000003241796
+                                                startAngle: 241.99999830945515
+                                                endAngle: 241.9999997548599
                                                 type: arc
                                             fillet10:
                                                 origin:
-                                                    - 183.4132461925082
-                                                    - -188.51345147868926
+                                                    - 166.33330909999998
+                                                    - -178.9340788
                                                 radius: 2.5
-                                                startAngle: 331.99999830945495
-                                                endAngle: 61.999998309455734
+                                                startAngle: 43.4938333398417
+                                                endAngle: 71.99999940497
                                                 type: arc
                                             fillet11:
                                                 origin:
-                                                    - 148.3
-                                                    - -164.5
+                                                    - 159.10669350000003
+                                                    - -171.32869779999996
                                                 radius: 2.5
-                                                startAngle: 90
-                                                endAngle: 180
+                                                startAngle: 251.99999940497017
+                                                endAngle: 251.99999965790443
                                                 type: arc
                                             fillet12:
                                                 origin:
@@ -694,37 +423,29 @@ models:
                                                 type: arc
                                             fillet14:
                                                 origin:
-                                                    - 110.5
-                                                    - -95
+                                                    - 106.44575180000001
+                                                    - -96
                                                 radius: 2.5
-                                                startAngle: 180
-                                                endAngle: 270
+                                                startAngle: 31.96571893253827
+                                                endAngle: 90
                                                 type: arc
                                             fillet15:
                                                 origin:
-                                                    - 86.5
+                                                    - 85.55424819999999
                                                     - -96
                                                 radius: 2.5
                                                 startAngle: 90
-                                                endAngle: 180
+                                                endAngle: 148.0342810674616
                                                 type: arc
                                             fillet16:
                                                 origin:
-                                                    - 68.5
+                                                    - 68.1240384
                                                     - -100
                                                 radius: 2.5
                                                 startAngle: 90
-                                                endAngle: 180
+                                                endAngle: 162.8953648141652
                                                 type: arc
                                             fillet17:
-                                                origin:
-                                                    - 63.5
-                                                    - -101
-                                                radius: 2.5
-                                                startAngle: 270
-                                                endAngle: 0
-                                                type: arc
-                                            fillet18:
                                                 origin:
                                                     - 50.5
                                                     - -106
@@ -732,7 +453,7 @@ models:
                                                 startAngle: 90
                                                 endAngle: 180
                                                 type: arc
-                                            fillet19:
+                                            fillet18:
                                                 origin:
                                                     - 50.5
                                                     - -158

@@ -56,6 +56,14 @@ putting it above the matrix instead added 30 mm of board height for a part
 that is 33 × 18 mm. The USB port faces inboard, so the cable exits between
 the halves.
 
+The outline is **morphologically closed** (grown 6 mm, shrunk 6 mm) before
+filleting. That fills the concave pockets between the thumb cluster, the
+controller area and the key pads — dead space whose sharp inside corners are
+crack initiation points in both FR4 and the printed plate. It costs 1.3% more
+board area and nothing in bounding box, and takes the narrowest neck from
+22.2 mm to 33.0 mm. A plain convex hull would have swallowed the whole empty
+region left of the thumb cluster and added ~40 cm² of pointless board.
+
 ## What is in here
 
 ```
@@ -86,7 +94,7 @@ make           # build, check, case, firmware
 | Check | Catches |
 |-------|---------|
 | `layout` | keycaps or switch bodies colliding; thumb keys out of reach |
-| `outline` | board in disconnected pieces; stray voids; missing screw holes |
+| `outline` | disconnected pieces; stray voids; missing screw holes; **thin necks and concave notches** |
 | `matrix` | miswired switch/diode; **two keys sharing a matrix cell** |
 | `fit` | components or screws hanging off the board edge |
 | `shorts` | **pads on different nets overlapping**; copper clearance |

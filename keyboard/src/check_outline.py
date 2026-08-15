@@ -25,6 +25,9 @@ POINTS = BUILD / "points" / "points.yaml"
 
 ARC_STEPS = 8          # arcs are sampled, so fillets join their neighbours
 WELD = 0.02            # mm; endpoints closer than this are the same vertex
+MIN_NECK = 8.0         # mm; thinner than this and the board is snappable
+CLOSE = 6.0            # must match `close` in config.yaml
+MAX_POCKET = 100.0     # mm^2; concave pockets bigger than this are notches
 
 
 def read_entities(path):
@@ -95,6 +98,69 @@ def mount_points():
         return []
     raw = yaml.safe_load(POINTS.read_text())
     return [(p["x"], p["y"]) for n, p in raw.items() if n.startswith("mounts_")]
+
+
+def check_structure():
+    """
+    Report how thin the board gets, and whether any concave pockets remain.
+
+    A narrow neck is where a PCB snaps, and a sharp concave corner is a crack
+    initiation point in both FR4 and the printed plate. The neck width is
+    found by eroding the outline until it splits: the radius at which that
+    happens is half the narrowest neck.
+
+    board_polygon lives in check_fit, which imports this module - so the
+    import is deferred into the function to keep the two from importing each
+    other at load time.
+    """
+    from check_fit import board_polygon          # noqa: E402  (deferred)
+
+    board = board_polygon()
+    ok = True
+
+    def pieces(p):
+        if p.is_empty:
+            return 0
+        return 1 if p.geom_type == "Polygon" else len(p.geoms)
+
+    neck, prev = None, 1
+    for i in range(1, 400):
+        r = i / 10.0
+        eroded = board.buffer(-r)
+        n = pieces(eroded)
+        if n == 0:
+            neck = 2 * (r - 0.1)
+            print(f"  ok    neck width: > {neck:.1f} mm (never splits)")
+            break
+        if n > prev:
+            neck = 2 * r
+            if neck < MIN_NECK:
+                ok = False
+                print(f"  FAIL  neck width: narrowest neck is {neck:.1f} mm "
+                      f"(minimum {MIN_NECK})")
+            else:
+                print(f"  ok    neck width: narrowest neck {neck:.1f} mm")
+            break
+        prev = n
+
+    # Concave pockets the closing did not reach.
+    closed = board.buffer(CLOSE, join_style=1).buffer(-CLOSE, join_style=1)
+    fill = closed.difference(board)
+    geoms = ([fill] if fill.geom_type == "Polygon"
+             else list(getattr(fill, "geoms", [])))
+    pockets = [g for g in geoms if g.area > MAX_POCKET]
+    if pockets:
+        ok = False
+        print(f"  FAIL  notches: {len(pockets)} concave pocket(s) larger than "
+              f"{MAX_POCKET} mm^2 remain")
+        for g in sorted(pockets, key=lambda g: -g.area)[:5]:
+            x0, y0, x1, y1 = g.bounds
+            print(f"          {x1-x0:.1f} x {y1-y0:.1f} mm at ({x0:.0f}, {y0:.0f})"
+                  f" - raise `close` in config.yaml")
+    else:
+        print(f"  ok    notches: no concave pocket larger than {MAX_POCKET} mm^2")
+
+    return ok
 
 
 def main():
@@ -203,6 +269,8 @@ def main():
                   f"at ({b[0]:.0f}, {b[1]:.0f}) - widen the nearest bridge")
     else:
         print("  ok    voids: no unintended holes in the board")
+
+    ok = check_structure() and ok
 
     # 2. every vertex must have even degree, or the boundary is not closed
     dangling = [v for v, dg in degree.items() if dg % 2 != 0]

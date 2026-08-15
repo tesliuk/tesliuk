@@ -13,6 +13,7 @@ kx: 18
 ky: 17
 kx_inner: 19.8
 bleed: 6
+close: 6
 st_pinky: -6
 st_ring: 0
 st_middle: 4
