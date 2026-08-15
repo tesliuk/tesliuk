@@ -69,13 +69,20 @@ putting it above the matrix instead added 30 mm of board height for a part
 that is 33 × 18 mm. The USB port faces inboard, so the cable exits between
 the halves.
 
-The outline is **morphologically closed** (grown 18 mm, shrunk 18 mm) before
+The board silhouette is built from **three simple shapes**, not from one
+rectangle per key: the finger matrix as a single rectangle, the thumb cluster
+as a hull over its five keys, and the controller area as a rectangle. Unioning
+24 key pads plus a rotated thumb cluster used to produce an outline of ~50
+entities full of little scallops and fillets, which is miserable to build a
+case against. The result now is **9 straight lines and 12 arcs**, for about
+1 cm² more copper.
+
+The union is then **morphologically closed** (grown 18 mm, shrunk 18 mm) before
 filleting. That fills the concave pockets between the thumb cluster, the
 controller area and the key pads — dead space whose sharp inside corners are
 crack initiation points in both FR4 and the printed plate. It costs 1.3% more
-board area and nothing in bounding box, and takes the narrowest neck from
-22.2 mm to 55.4 mm. Each half is closed separately — closing them together
-would bridge the gap between the halves and fuse them. A plain convex hull would have swallowed the whole empty
+board area and nothing in bounding box, and keeps the narrowest neck above 50 mm. Each half is closed separately —
+closing them together would bridge the gap between the halves and fuse them. A plain convex hull would have swallowed the whole empty
 region left of the thumb cluster and added ~40 cm² of pointless board.
 
 ## What is in here

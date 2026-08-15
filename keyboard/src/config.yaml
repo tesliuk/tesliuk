@@ -284,23 +284,6 @@ points:
         reset:
 
     # -------------------------------------------------------------------
-    # Web patch.
-    #
-    # t2/t3/t4/t5 surround a ~7 x 5 mm gap that their grown key pads do not
-    # quite close, which would come out as a hole in the middle of the thumb
-    # cluster. This is a point rather than an `adjust` shift so that the
-    # global mirror places it correctly on the right half too.
-    # -------------------------------------------------------------------
-    web:
-      anchor:
-        ref: matrix_inner_bottom
-        shift: [21.5, -38]
-      columns:
-        web:
-      rows:
-        web:
-
-    # -------------------------------------------------------------------
     # M2 mounting holes.
     #
     # These positions are NOT hand-picked. The layout is dense - switch
@@ -367,26 +350,40 @@ outlines:
       size: [17.5, 16.5]
 
   # --- Left half only: this is the fabricated outline -------------------
+  # --- Board silhouette -------------------------------------------------
+  # Built from THREE simple shapes, not from one rectangle per key.
+  #
+  # Unioning 24 key pads plus a rotated thumb cluster produced an outline with
+  # ~210 vertices: every column step and every rotated thumb key left its own
+  # scallop and fillet. That is miserable to build a case against. These three
+  # primitives give the same board in ~17 vertices - straight edges and simple
+  # corners - for about 1 cm2 more copper.
+  #
+  # It also makes the `web` patch and the old bridges unnecessary: a single
+  # rectangle cannot be disconnected from itself, and the hull is convex.
   _blob_left:
+  # 1. The finger matrix as ONE rectangle spanning every column and row.
     - what: rectangle
-      where: /^(matrix|thumb)_/
-      size: [kx + bleed, ky + bleed]
-    # Bridges. The thumb keys sit further from their neighbours than the
-    # `bleed`-grown key pads can span, so the union would silently produce a
-    # board in several disconnected pieces. Ergogen does not warn about
-    # this; a board house would either reject the file or ship fragments.
-    # check_outline.py enforces that these bridges do their job.
-    - what: rectangle
-      where: /^web_/
-      size: [26, 16]
-    # One pad covers the whole controller area in the notch between the
-    # matrix and the thumb cluster. The jack and the reset button sit inside
-    # it, so they need no pad of their own.
+      where:
+        ref: matrix_pinky_home
+        shift: [(3 * kx + kx_inner) / 2, (st_middle + 3 * ky) / 2 - st_pinky - ky]
+      size: [4 * kx + kx_inner + bleed, st_middle + 3 * ky + ky + bleed]
+  # 2. The thumb cluster as a hull over its five keys. `extend` grows each
+  #    anchor to that key's pad, so the hull wraps the pads, not the centres.
+    - what: hull
+      points:
+        - ref: thumb_t1_thumb
+        - ref: thumb_t2_thumb
+        - ref: thumb_t3_thumb
+        - ref: thumb_t5_thumb
+        - ref: thumb_t4_thumb
+      concavity: 1000
+      extend: true
+  # 3. The controller area, in the notch beside the thumb cluster.
     - what: rectangle
       where: /^mcu_/
       size: [38, 64]
 
-  # M2 clearance holes, subtracted from the board.
   _screws:
     - what: circle
       where: /^mounts_/
@@ -430,17 +427,6 @@ outlines:
       name: _plate_holes
 
   # --- Both halves: preview only ----------------------------------------
-  _blob_all:
-    - what: rectangle
-      where: /^(mirror_)?(matrix|thumb)_/
-      size: [kx + bleed, ky + bleed]
-    - what: rectangle
-      where: /^(mirror_)?web_/
-      size: [26, 16]
-    - what: rectangle
-      where: /^(mirror_)?mcu_/
-      size: [38, 64]
-
   _screws_all:
     - what: circle
       where: /^(mirror_)?mounts_/
@@ -451,13 +437,26 @@ outlines:
   # a radius of 18 grows each side by 18 - and fuse them into one shape. That
   # never affected the fabricated board (board_left is the left half alone),
   # but it made the preview picture a lie.
+  # Mirror image of _blob_left, for the preview picture only.
   _blob_right:
     - what: rectangle
-      where: /^mirror_(matrix|thumb)_/
-      size: [kx + bleed, ky + bleed]
-    - what: rectangle
-      where: /^mirror_web_/
-      size: [26, 16]
+      # NOTE: an anchor `shift` on a mirror_ ref has its x auto-negated by
+      # ergogen, so this is the SAME expression as the left half, not its
+      # negation. (An `adjust` shift on a mirrored point is NOT mirrored -
+      # the two behave differently, which is easy to get backwards.)
+      where:
+        ref: mirror_matrix_pinky_home
+        shift: [(3 * kx + kx_inner) / 2, (st_middle + 3 * ky) / 2 - st_pinky - ky]
+      size: [4 * kx + kx_inner + bleed, st_middle + 3 * ky + ky + bleed]
+    - what: hull
+      points:
+        - ref: mirror_thumb_t1_thumb
+        - ref: mirror_thumb_t2_thumb
+        - ref: mirror_thumb_t3_thumb
+        - ref: mirror_thumb_t5_thumb
+        - ref: mirror_thumb_t4_thumb
+      concavity: 1000
+      extend: true
     - what: rectangle
       where: /^mirror_mcu_/
       size: [38, 64]
